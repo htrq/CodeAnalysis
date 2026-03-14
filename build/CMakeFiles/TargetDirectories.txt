@@ -1,3 +1,0 @@
-/home/htrq/prog/test3/build/CMakeFiles/fltkTest3.dir
-/home/htrq/prog/test3/build/CMakeFiles/edit_cache.dir
-/home/htrq/prog/test3/build/CMakeFiles/rebuild_cache.dir
