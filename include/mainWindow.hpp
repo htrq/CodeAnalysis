@@ -5,7 +5,7 @@
 #include <FL/Fl_Wizard.H>
 
 class mainWindow {
-  static void browserCallback(Fl_Widget *widget, void *data);
+  static void changeTabCallback(Fl_Widget *widget, void *data);
 
 public:
   mainWindow() = default;
