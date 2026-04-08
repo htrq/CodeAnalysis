@@ -1,0 +1,52 @@
+# .clangd — конфигурация для clangd
+# Использует camelBack для переменных и функций, PascalCase для классов
+
+Diagnostics:
+  # Включаем проверки clang-tidy
+  ClangTidy:
+    # Добавляем наборы правил
+    Add:
+      - cppcoreguidelines-*
+      - bugprone-*
+      - performance-*
+      - modernize-*
+      - readability-*
+      - clang-analyzer-*
+    # Исключаем конфликтные и слишком строгие правила
+    Remove:
+      - cppcoreguidelines-avoid-magic-numbers
+      - readability-magic-numbers
+      - modernize-use-trailing-return-type
+      - bugprone-easily-swappable-parameters
+      - cppcoreguidelines-owning-memory
+      - readability-identifier-naming*      # полностью отключаем проверки именования
+    CheckOptions:
+      # Опции для конкретных правил
+      cppcoreguidelines-macro-usage.IgnoreCommandLineMacros: false
+
+  # Показывать неиспользуемые include
+  UnusedIncludes: Strict
+  
+  # Показывать пропущенные include
+  MissingIncludes: Strict
+
+CompileFlags:
+  # Добавляем стандартные флаги
+  Add:
+    - -std=c++23
+    - -stdlib=libc++
+    - -Wall
+    - -Wextra
+
+# Настройки индексации
+Index:
+  StandardLibrary: Yes
+  Threads: 0
+
+# Настройки автодополнения
+Completion:
+  AllScopes: Yes
+
+# Настройки Hover
+Hover:
+  ShowAKA: Yes

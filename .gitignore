@@ -42,3 +42,6 @@
 
 # my build directory
 build/
+
+# interface file with positions
+interface
