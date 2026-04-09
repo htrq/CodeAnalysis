@@ -20,7 +20,7 @@ class linuxTerminal : public Fl_Terminal
     int master_fd;
 public:
     using Fl_Terminal::Fl_Terminal;
-    ~linuxTerminal() override;
+    ~linuxTerminal();
     void enterFirstPromt();
     void makeTerminalKeyboardEventHandler();
     int handle(int event) override;

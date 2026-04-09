@@ -6,7 +6,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <print>
-#include <vector>
+#include <sys/types.h>
 #include <vterm.h>
 #include <fcntl.h>
 #include <unistd.h>
@@ -18,8 +18,10 @@ void linuxTerminal::enterFirstPromt() { append("echo \"Hellow world\""); }
 
 
 int linuxTerminal::handle(int event) {
-  if (event == Fl_Event::FL_KEYDOWN) {
-      std::println("key {} was pushed", Fl::event_key());
+  if (event == FL_KEYDOWN) {
+    int key = Fl::event_key();
+    const char* text = Fl::event_text();
+      std::println("key {} was pushed", key);
   }
 
   // ВАЖНО: передать событие родителю
@@ -67,12 +69,6 @@ void linuxTerminal::pty_cb(int fd, void* userdata) {
 }
 
 linuxTerminal::~linuxTerminal() {
-  if (context->screen != nullptr) {
-    vterm_screen_set_callbacks(context->screen, nullptr, nullptr);
-  }
-  if (context->term != nullptr) {
-    vterm_free(context->term);
-  }
   delete context;
   context = nullptr;
 }
