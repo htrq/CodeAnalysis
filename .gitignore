@@ -42,6 +42,10 @@
 
 # my build directory
 build/
+build-debug/
+
+#also ignore cmakeuserpresets
+CMakeUserPresets.json
 
 # interface file with positions
 interface
