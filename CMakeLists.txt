@@ -12,7 +12,6 @@ ${CMAKE_CURRENT_SOURCE_DIR}/src/linuxTerminal.cpp
 find_package(FLTK CONFIG REQUIRED)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE fltk)
-target_link_libraries(${PROJECT_NAME} PRIVATE vterm)
 
 target_include_directories(${PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/include

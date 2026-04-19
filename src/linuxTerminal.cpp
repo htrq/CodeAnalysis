@@ -7,7 +7,6 @@
 #include <cstdlib>
 #include <print>
 #include <sys/types.h>
-#include <vterm.h>
 #include <fcntl.h>
 #include <unistd.h>
 #include <sys/ioctl.h>
@@ -68,7 +67,4 @@ void linuxTerminal::pty_cb(int fd, void* userdata) {
     }
 }
 
-linuxTerminal::~linuxTerminal() {
-  delete context;
-  context = nullptr;
-}
+linuxTerminal::~linuxTerminal() = default;
