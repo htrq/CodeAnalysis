@@ -1,6 +1,0 @@
-# ninja log v6
-3	2485	1776581386547662789	CMakeFiles/fltkTest3.dir/src/widgetData.cpp.o	8fcd6d9365a84df8
-5	2424	1776581548214044960	CMakeFiles/fltkTest3.dir/main.cpp.o	43f065bea7e1217a
-6	2559	1776581548214044960	CMakeFiles/fltkTest3.dir/src/mainWindow.cpp.o	aa1001aaa3a79ff3
-3	1288	1776581580787356413	CMakeFiles/fltkTest3.dir/src/linuxTerminal.cpp.o	a2d7cc5daff8af
-1288	1546	1776581582069074966	fltkTest3	763a984eb3d6fb6b
