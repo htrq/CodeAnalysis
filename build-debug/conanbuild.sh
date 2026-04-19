@@ -1,0 +1,1 @@
+. "/home/htrq/prog/CodeAnalysis/build-debug/conanbuildenv-debug-x86_64.sh"

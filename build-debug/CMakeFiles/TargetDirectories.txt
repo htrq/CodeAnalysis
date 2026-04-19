@@ -1,0 +1,3 @@
+/home/htrq/prog/CodeAnalysis/build-debug/CMakeFiles/fltkTest3.dir
+/home/htrq/prog/CodeAnalysis/build-debug/CMakeFiles/edit_cache.dir
+/home/htrq/prog/CodeAnalysis/build-debug/CMakeFiles/rebuild_cache.dir
