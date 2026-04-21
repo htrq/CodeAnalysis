@@ -30,17 +30,12 @@ void mainWindow::createWindow() {
 
   auto *groupTerminal = new Fl_Group(18, 302, 721, 196);
   {
-    
-#ifdef __unix__
+
     auto *term = new linuxTerminal(22, 303, 716, 192);
     term->enterFirstPromt();
     term->createPTY();
     
-#elif #defined(_WIN32)
-    // windowsTerminal
-#else
-#error "Unsupported platform"
-#endif
+    //windows terminal
   }
   groupTerminal->end();
 
