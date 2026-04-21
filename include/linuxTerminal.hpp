@@ -17,7 +17,7 @@ public:
     void makeTerminalKeyboardEventHandler();
     int handle(int event) override;
     void createPTY();
-    static void pty_cb(int fd, void*);
+    static void pty_cb(int fd, void* userdata);
 };
 
 #endif
