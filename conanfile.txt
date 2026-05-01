@@ -4,3 +4,8 @@ fltk/1.4.4
 [generators]
 CMakeToolchain
 CMakeDeps
+
+[options]
+fltk/*:shared=True
+fltk/*:use_xft=True
+fltk/*:use_freetype=True

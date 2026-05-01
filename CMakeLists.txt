@@ -6,6 +6,7 @@ ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/mainWindow.cpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/widgetData.cpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/linuxTerminal.cpp
+${CMAKE_CURRENT_SOURCE_DIR}/src/tipTree.cpp
 )
 
 find_package(fltk CONFIG REQUIRED)
