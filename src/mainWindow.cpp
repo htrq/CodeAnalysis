@@ -26,7 +26,7 @@ void mainWindow::createWindow() {
   Fl_Tooltip::font(FL_HELVETICA);
   Fl_Tooltip::size(14);
 
-  auto *window = new Fl_Double_Window(612, 230, 1134, 508, "окно");
+  auto *window = new Fl_Double_Window(612, 230, 777, 508, "окно");
   window->tooltip("Привет!!");
   auto *tabs = new Fl_Tabs(19, 27, 716, 267);
   {
@@ -126,8 +126,6 @@ void mainWindow::createWindow() {
     //windows terminal
   }
   groupTerminal->end();
-
-  auto* tipBox = new Fl_Box(774, 69, 339, 419, "лейбл");
 
   window->end();
   window->show();

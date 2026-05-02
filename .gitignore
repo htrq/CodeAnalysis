@@ -43,9 +43,6 @@
 # my build directory
 build/
 
-#my third-party directory
-third-party/
-
 #also ignore user specific stuff
 CMakeUserPresets.json
 .clangd
