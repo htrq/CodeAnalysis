@@ -1,0 +1,1713 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:39 (project)"
+    message: |
+      The system is: Linux - 6.12.74+deb13+1-amd64 - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:39 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /usr/bin/cc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is GNU, found in:
+        /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/3.31.6/CompilerIdC/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:39 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /usr/bin/c++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/3.31.6/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:39 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-Aq2zVU"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-Aq2zVU"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-Aq2zVU'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_6efe6
+        [1/2] /usr/bin/cc   -v -o CMakeFiles/cmTC_6efe6.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.31/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/cc
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Debian 14.2.0-19' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2,rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=3
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 14.2.0 (Debian 14.2.0-19) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6efe6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_6efe6.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/14/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.31/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_6efe6.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -o /tmp/ccjpNgQ5.s
+        GNU C17 (Debian 14.2.0-19) version 14.2.0 (x86_64-linux-gnu)
+        	compiled by GNU C version 14.2.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.27-GMP
+        
+        warning: MPFR header version 4.2.1 differs from library version 4.2.2.
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/include-fixed/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-linux-gnu/14/include
+         /usr/local/include
+         /usr/include/x86_64-linux-gnu
+         /usr/include
+        End of search list.
+        Compiler executable checksum: 0051dfc1fa4e89ba97760da93f2546f3
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6efe6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_6efe6.dir/'
+         as -v --64 -o CMakeFiles/cmTC_6efe6.dir/CMakeCCompilerABI.c.o /tmp/ccjpNgQ5.s
+        GNU assembler version 2.44 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.44
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6efe6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_6efe6.dir/CMakeCCompilerABI.c.'
+        [2/2] : && /usr/bin/cc  -v -Wl,-v CMakeFiles/cmTC_6efe6.dir/CMakeCCompilerABI.c.o -o cmTC_6efe6   && :
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/cc
+        COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Debian 14.2.0-19' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2,rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=3
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 14.2.0 (Debian 14.2.0-19) 
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_6efe6' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_6efe6.'
+         /usr/libexec/gcc/x86_64-linux-gnu/14/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccpzMWcQ.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_6efe6 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_6efe6.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o
+        collect2 version 14.2.0
+        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccpzMWcQ.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_6efe6 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_6efe6.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o
+        GNU ld (GNU Binutils for Debian) 2.44
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_6efe6' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_6efe6.'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "/usr/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:39 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-linux-gnu/14/include]
+          add: [/usr/local/include]
+          add: [/usr/include/x86_64-linux-gnu]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/14/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/14/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/lib/gcc/x86_64-linux-gnu/14/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "/usr/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:39 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-Aq2zVU']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/ninja -v cmTC_6efe6]
+        ignore line: [[1/2] /usr/bin/cc   -v -o CMakeFiles/cmTC_6efe6.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.31/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Debian 14.2.0-19' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=3]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 14.2.0 (Debian 14.2.0-19) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6efe6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_6efe6.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/14/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.31/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_6efe6.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -o /tmp/ccjpNgQ5.s]
+        ignore line: [GNU C17 (Debian 14.2.0-19) version 14.2.0 (x86_64-linux-gnu)]
+        ignore line: [	compiled by GNU C version 14.2.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.27-GMP]
+        ignore line: []
+        ignore line: [warning: MPFR header version 4.2.1 differs from library version 4.2.2.]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/include-fixed/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/14/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/x86_64-linux-gnu]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: 0051dfc1fa4e89ba97760da93f2546f3]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6efe6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_6efe6.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_6efe6.dir/CMakeCCompilerABI.c.o /tmp/ccjpNgQ5.s]
+        ignore line: [GNU assembler version 2.44 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.44]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6efe6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_6efe6.dir/CMakeCCompilerABI.c.']
+        ignore line: [[2/2] : && /usr/bin/cc  -v -Wl -v CMakeFiles/cmTC_6efe6.dir/CMakeCCompilerABI.c.o -o cmTC_6efe6   && :]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Debian 14.2.0-19' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=3]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 14.2.0 (Debian 14.2.0-19) ]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_6efe6' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_6efe6.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/14/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccpzMWcQ.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_6efe6 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_6efe6.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o]
+          arg [/usr/libexec/gcc/x86_64-linux-gnu/14/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccpzMWcQ.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_6efe6] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/14] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/14]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib]
+          arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+          arg [-L/lib/../lib] ==> dir [/lib/../lib]
+          arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+          arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/14/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../..]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_6efe6.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [collect2 version 14.2.0]
+        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccpzMWcQ.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_6efe6 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_6efe6.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o]
+        linker tool for 'C': /usr/bin/ld
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o] ==> [/usr/lib/x86_64-linux-gnu/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/14] ==> [/usr/lib/gcc/x86_64-linux-gnu/14]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib] ==> [/usr/lib]
+        collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+        collapse library dir [/lib/../lib] ==> [/lib]
+        collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../..] ==> [/usr/lib]
+        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/usr/lib/x86_64-linux-gnu/Scrt1.o;/usr/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o;/usr/lib/x86_64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/14;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "/usr/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:39 (project)"
+    message: |
+      Running the C compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld (GNU Binutils for Debian) 2.44
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:39 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-a7xtVx"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-a7xtVx"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-a7xtVx'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_4509e
+        [1/2] /usr/bin/c++   -v -o CMakeFiles/cmTC_4509e.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/c++
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Debian 14.2.0-19' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2,rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=3
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 14.2.0 (Debian 14.2.0-19) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4509e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4509e.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/14/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_4509e.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -o /tmp/ccyC1ts3.s
+        GNU C++17 (Debian 14.2.0-19) version 14.2.0 (x86_64-linux-gnu)
+        	compiled by GNU C version 14.2.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.27-GMP
+        
+        warning: MPFR header version 4.2.1 differs from library version 4.2.2.
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "/usr/include/x86_64-linux-gnu/c++/14"
+        ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/include-fixed/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/include/c++/14
+         /usr/include/x86_64-linux-gnu/c++/14
+         /usr/include/c++/14/backward
+         /usr/lib/gcc/x86_64-linux-gnu/14/include
+         /usr/local/include
+         /usr/include/x86_64-linux-gnu
+         /usr/include
+        End of search list.
+        Compiler executable checksum: a0e1d70a4b6c50c7ed1b3d36dfd3f9a4
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4509e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4509e.dir/'
+         as -v --64 -o CMakeFiles/cmTC_4509e.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccyC1ts3.s
+        GNU assembler version 2.44 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.44
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4509e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4509e.dir/CMakeCXXCompilerABI.cpp.'
+        [2/2] : && /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_4509e.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_4509e   && :
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/c++
+        COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Debian 14.2.0-19' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2,rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=3
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 14.2.0 (Debian 14.2.0-19) 
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4509e' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_4509e.'
+         /usr/libexec/gcc/x86_64-linux-gnu/14/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccppFDkf.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_4509e /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_4509e.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o
+        collect2 version 14.2.0
+        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccppFDkf.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_4509e /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_4509e.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o
+        GNU ld (GNU Binutils for Debian) 2.44
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4509e' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_4509e.'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "/usr/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:39 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/include/c++/14]
+          add: [/usr/include/x86_64-linux-gnu/c++/14]
+          add: [/usr/include/c++/14/backward]
+          add: [/usr/lib/gcc/x86_64-linux-gnu/14/include]
+          add: [/usr/local/include]
+          add: [/usr/include/x86_64-linux-gnu]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/include/c++/14] ==> [/usr/include/c++/14]
+        collapse include dir [/usr/include/x86_64-linux-gnu/c++/14] ==> [/usr/include/x86_64-linux-gnu/c++/14]
+        collapse include dir [/usr/include/c++/14/backward] ==> [/usr/include/c++/14/backward]
+        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/14/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/14/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/include/c++/14;/usr/include/x86_64-linux-gnu/c++/14;/usr/include/c++/14/backward;/usr/lib/gcc/x86_64-linux-gnu/14/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "/usr/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:39 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-a7xtVx']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/ninja -v cmTC_4509e]
+        ignore line: [[1/2] /usr/bin/c++   -v -o CMakeFiles/cmTC_4509e.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Debian 14.2.0-19' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=3]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 14.2.0 (Debian 14.2.0-19) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4509e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4509e.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/14/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_4509e.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -o /tmp/ccyC1ts3.s]
+        ignore line: [GNU C++17 (Debian 14.2.0-19) version 14.2.0 (x86_64-linux-gnu)]
+        ignore line: [	compiled by GNU C version 14.2.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.27-GMP]
+        ignore line: []
+        ignore line: [warning: MPFR header version 4.2.1 differs from library version 4.2.2.]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring duplicate directory "/usr/include/x86_64-linux-gnu/c++/14"]
+        ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/include-fixed/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/include/c++/14]
+        ignore line: [ /usr/include/x86_64-linux-gnu/c++/14]
+        ignore line: [ /usr/include/c++/14/backward]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/14/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/x86_64-linux-gnu]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: a0e1d70a4b6c50c7ed1b3d36dfd3f9a4]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4509e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4509e.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_4509e.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccyC1ts3.s]
+        ignore line: [GNU assembler version 2.44 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.44]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4509e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4509e.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [[2/2] : && /usr/bin/c++  -v -Wl -v CMakeFiles/cmTC_4509e.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_4509e   && :]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Debian 14.2.0-19' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=3]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 14.2.0 (Debian 14.2.0-19) ]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4509e' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_4509e.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/14/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccppFDkf.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_4509e /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_4509e.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o]
+          arg [/usr/libexec/gcc/x86_64-linux-gnu/14/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccppFDkf.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_4509e] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/14] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/14]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib]
+          arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+          arg [-L/lib/../lib] ==> dir [/lib/../lib]
+          arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+          arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/14/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../..]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_4509e.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [collect2 version 14.2.0]
+        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccppFDkf.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_4509e /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_4509e.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o]
+        linker tool for 'CXX': /usr/bin/ld
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o] ==> [/usr/lib/x86_64-linux-gnu/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/14] ==> [/usr/lib/gcc/x86_64-linux-gnu/14]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib] ==> [/usr/lib]
+        collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+        collapse library dir [/lib/../lib] ==> [/lib]
+        collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../..] ==> [/usr/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/usr/lib/x86_64-linux-gnu/Scrt1.o;/usr/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o;/usr/lib/x86_64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/14;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "/usr/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:39 (project)"
+    message: |
+      Running the CXX compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld (GNU Binutils for Debian) 2.44
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/CheckTypeSize.cmake:262 (check_include_file)"
+      - "CMake/setup.cmake:186 (CHECK_TYPE_SIZE)"
+      - "CMakeLists.txt:68 (include)"
+    checks:
+      - "Looking for sys/types.h"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-241co9"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-241co9"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "HAVE_SYS_TYPES_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-241co9'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_98b5d
+        [1/2] /usr/bin/cc    -o CMakeFiles/cmTC_98b5d.dir/CheckIncludeFile.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-241co9/CheckIncludeFile.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_98b5d.dir/CheckIncludeFile.c.o -o cmTC_98b5d   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/CheckTypeSize.cmake:263 (check_include_file)"
+      - "CMake/setup.cmake:186 (CHECK_TYPE_SIZE)"
+      - "CMakeLists.txt:68 (include)"
+    checks:
+      - "Looking for stdint.h"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-LcAqsB"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-LcAqsB"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "HAVE_STDINT_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-LcAqsB'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_53601
+        [1/2] /usr/bin/cc    -o CMakeFiles/cmTC_53601.dir/CheckIncludeFile.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-LcAqsB/CheckIncludeFile.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_53601.dir/CheckIncludeFile.c.o -o cmTC_53601   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/CheckTypeSize.cmake:264 (check_include_file)"
+      - "CMake/setup.cmake:186 (CHECK_TYPE_SIZE)"
+      - "CMakeLists.txt:68 (include)"
+    checks:
+      - "Looking for stddef.h"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-4hrNUn"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-4hrNUn"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "HAVE_STDDEF_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-4hrNUn'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_c8fa6
+        [1/2] /usr/bin/cc    -o CMakeFiles/cmTC_c8fa6.dir/CheckIncludeFile.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-4hrNUn/CheckIncludeFile.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_c8fa6.dir/CheckIncludeFile.c.o -o cmTC_c8fa6   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "CMake/setup.cmake:186 (CHECK_TYPE_SIZE)"
+      - "CMakeLists.txt:68 (include)"
+    checks:
+      - "Check size of short"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-WWzb9s"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-WWzb9s"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "HAVE_SIZEOF_SHORT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-WWzb9s'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_50116
+        [1/2] /usr/bin/cc    -o CMakeFiles/cmTC_50116.dir/SIZEOF_SHORT.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-WWzb9s/SIZEOF_SHORT.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_50116.dir/SIZEOF_SHORT.c.o -o cmTC_50116   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "CMake/setup.cmake:187 (CHECK_TYPE_SIZE)"
+      - "CMakeLists.txt:68 (include)"
+    checks:
+      - "Check size of int"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-tU5ei4"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-tU5ei4"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "HAVE_SIZEOF_INT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-tU5ei4'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_7e584
+        [1/2] /usr/bin/cc    -o CMakeFiles/cmTC_7e584.dir/SIZEOF_INT.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-tU5ei4/SIZEOF_INT.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_7e584.dir/SIZEOF_INT.c.o -o cmTC_7e584   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "CMake/setup.cmake:188 (CHECK_TYPE_SIZE)"
+      - "CMakeLists.txt:68 (include)"
+    checks:
+      - "Check size of long"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-DwXSI6"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-DwXSI6"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "HAVE_SIZEOF_LONG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-DwXSI6'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_ef56b
+        [1/2] /usr/bin/cc    -o CMakeFiles/cmTC_ef56b.dir/SIZEOF_LONG.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-DwXSI6/SIZEOF_LONG.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_ef56b.dir/SIZEOF_LONG.c.o -o cmTC_ef56b   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "CMake/setup.cmake:189 (CHECK_TYPE_SIZE)"
+      - "CMakeLists.txt:68 (include)"
+    checks:
+      - "Check size of long long"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-j8MEjq"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-j8MEjq"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "HAVE_HAVE_LONG_LONG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-j8MEjq'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_6a620
+        [1/2] /usr/bin/cc    -o CMakeFiles/cmTC_6a620.dir/HAVE_LONG_LONG.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-j8MEjq/HAVE_LONG_LONG.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_6a620.dir/HAVE_LONG_LONG.c.o -o cmTC_6a620   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "CMake/resources.cmake:34 (check_include_files)"
+      - "CMake/resources.cmake:127 (fl_find_header)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-BR4AIt"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-BR4AIt"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "HAVE_ALSA_ASOUNDLIB_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-BR4AIt'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_0c843
+        [1/2] /usr/bin/cc    -o CMakeFiles/cmTC_0c843.dir/HAVE_ALSA_ASOUNDLIB_H.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-BR4AIt/HAVE_ALSA_ASOUNDLIB_H.c
+        FAILED: CMakeFiles/cmTC_0c843.dir/HAVE_ALSA_ASOUNDLIB_H.c.o 
+        /usr/bin/cc    -o CMakeFiles/cmTC_0c843.dir/HAVE_ALSA_ASOUNDLIB_H.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-BR4AIt/HAVE_ALSA_ASOUNDLIB_H.c
+        /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-BR4AIt/HAVE_ALSA_ASOUNDLIB_H.c:2:10: fatal error: alsa/asoundlib.h: No such file or directory
+            2 | #include <alsa/asoundlib.h>
+              |          ^~~~~~~~~~~~~~~~~~
+        compilation terminated.
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "CMake/resources.cmake:34 (check_include_files)"
+      - "CMake/resources.cmake:128 (fl_find_header)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-5PRIg8"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-5PRIg8"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "HAVE_DLFCN_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-5PRIg8'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_28355
+        [1/2] /usr/bin/cc    -o CMakeFiles/cmTC_28355.dir/HAVE_DLFCN_H.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-5PRIg8/HAVE_DLFCN_H.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_28355.dir/HAVE_DLFCN_H.c.o -o cmTC_28355   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "CMake/resources.cmake:34 (check_include_files)"
+      - "CMake/resources.cmake:129 (fl_find_header)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-CgFst9"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-CgFst9"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "HAVE_GL_GLU_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-CgFst9'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_8b436
+        [1/2] /usr/bin/cc    -o CMakeFiles/cmTC_8b436.dir/HAVE_GL_GLU_H.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-CgFst9/HAVE_GL_GLU_H.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_8b436.dir/HAVE_GL_GLU_H.c.o -o cmTC_8b436   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "CMake/resources.cmake:34 (check_include_files)"
+      - "CMake/resources.cmake:130 (fl_find_header)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-UjODIs"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-UjODIs"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "HAVE_LOCALE_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-UjODIs'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_a4b39
+        [1/2] /usr/bin/cc    -o CMakeFiles/cmTC_a4b39.dir/HAVE_LOCALE_H.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-UjODIs/HAVE_LOCALE_H.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_a4b39.dir/HAVE_LOCALE_H.c.o -o cmTC_a4b39   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "CMake/resources.cmake:34 (check_include_files)"
+      - "CMake/resources.cmake:131 (fl_find_header)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-sVVrWd"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-sVVrWd"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "HAVE_OPENGL_GLU_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-sVVrWd'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_ef4a3
+        [1/2] /usr/bin/cc    -o CMakeFiles/cmTC_ef4a3.dir/HAVE_OPENGL_GLU_H.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-sVVrWd/HAVE_OPENGL_GLU_H.c
+        FAILED: CMakeFiles/cmTC_ef4a3.dir/HAVE_OPENGL_GLU_H.c.o 
+        /usr/bin/cc    -o CMakeFiles/cmTC_ef4a3.dir/HAVE_OPENGL_GLU_H.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-sVVrWd/HAVE_OPENGL_GLU_H.c
+        /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-sVVrWd/HAVE_OPENGL_GLU_H.c:2:10: fatal error: OpenGL/glu.h: No such file or directory
+            2 | #include <OpenGL/glu.h>
+              |          ^~~~~~~~~~~~~~
+        compilation terminated.
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "CMake/resources.cmake:34 (check_include_files)"
+      - "CMake/resources.cmake:132 (fl_find_header)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-jHExYc"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-jHExYc"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "HAVE_STDIO_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-jHExYc'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_c6bfe
+        [1/2] /usr/bin/cc    -o CMakeFiles/cmTC_c6bfe.dir/HAVE_STDIO_H.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-jHExYc/HAVE_STDIO_H.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_c6bfe.dir/HAVE_STDIO_H.c.o -o cmTC_c6bfe   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "CMake/resources.cmake:34 (check_include_files)"
+      - "CMake/resources.cmake:133 (fl_find_header)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-9s00JQ"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-9s00JQ"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "HAVE_STRINGS_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-9s00JQ'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_5b215
+        [1/2] /usr/bin/cc    -o CMakeFiles/cmTC_5b215.dir/HAVE_STRINGS_H.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-9s00JQ/HAVE_STRINGS_H.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_5b215.dir/HAVE_STRINGS_H.c.o -o cmTC_5b215   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "CMake/resources.cmake:34 (check_include_files)"
+      - "CMake/resources.cmake:134 (fl_find_header)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-PdE3Nz"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-PdE3Nz"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "HAVE_SYS_SELECT_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-PdE3Nz'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_ff7b8
+        [1/2] /usr/bin/cc    -o CMakeFiles/cmTC_ff7b8.dir/HAVE_SYS_SELECT_H.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-PdE3Nz/HAVE_SYS_SELECT_H.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_ff7b8.dir/HAVE_SYS_SELECT_H.c.o -o cmTC_ff7b8   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "CMake/resources.cmake:34 (check_include_files)"
+      - "CMake/resources.cmake:135 (fl_find_header)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-xGK1u1"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-xGK1u1"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "HAVE_SYS_STDTYPES_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-xGK1u1'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_23ea4
+        [1/2] /usr/bin/cc    -o CMakeFiles/cmTC_23ea4.dir/HAVE_SYS_STDTYPES_H.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-xGK1u1/HAVE_SYS_STDTYPES_H.c
+        FAILED: CMakeFiles/cmTC_23ea4.dir/HAVE_SYS_STDTYPES_H.c.o 
+        /usr/bin/cc    -o CMakeFiles/cmTC_23ea4.dir/HAVE_SYS_STDTYPES_H.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-xGK1u1/HAVE_SYS_STDTYPES_H.c
+        /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-xGK1u1/HAVE_SYS_STDTYPES_H.c:2:10: fatal error: sys/stdtypes.h: No such file or directory
+            2 | #include <sys/stdtypes.h>
+              |          ^~~~~~~~~~~~~~~~
+        compilation terminated.
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "CMake/resources.cmake:34 (check_include_files)"
+      - "CMake/resources.cmake:137 (fl_find_header)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-g9r3gK"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-g9r3gK"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "HAVE_X11_XREGION_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-g9r3gK'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_197b2
+        [1/2] /usr/bin/cc    -o CMakeFiles/cmTC_197b2.dir/HAVE_X11_XREGION_H.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-g9r3gK/HAVE_X11_XREGION_H.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_197b2.dir/HAVE_X11_XREGION_H.c.o -o cmTC_197b2   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "CMake/resources.cmake:34 (check_include_files)"
+      - "CMake/resources.cmake:143 (fl_find_header)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-i7Bd3G"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-i7Bd3G"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "HAVE_PTHREAD_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-i7Bd3G'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_b88c9
+        [1/2] /usr/bin/cc    -o CMakeFiles/cmTC_b88c9.dir/HAVE_PTHREAD_H.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-i7Bd3G/HAVE_PTHREAD_H.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_b88c9.dir/HAVE_PTHREAD_H.c.o -o cmTC_b88c9   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "CMake/resources.cmake:149 (try_compile)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeTmp"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "HAVE_PTHREAD_MUTEX_RECURSIVE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_39301
+        [1/2] /usr/bin/cc    -o CMakeFiles/cmTC_39301.dir/pthread_mutex_recursive.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake/pthread_mutex_recursive.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_39301.dir/pthread_mutex_recursive.c.o -o cmTC_39301   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "CMake/resources.cmake:34 (check_include_files)"
+      - "CMake/resources.cmake:190 (fl_find_header)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-bMax2t"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-bMax2t"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "HAVE_DIRENT_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-bMax2t'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_d30f3
+        [1/2] /usr/bin/cc    -o CMakeFiles/cmTC_d30f3.dir/HAVE_DIRENT_H.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-bMax2t/HAVE_DIRENT_H.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_d30f3.dir/HAVE_DIRENT_H.c.o -o cmTC_d30f3   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "CMake/resources.cmake:257 (check_symbol_exists)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-wUpDg1"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-wUpDg1"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "HAVE_DLSYM"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-wUpDg1'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_aa9d7
+        [1/2] /usr/bin/cc    -o CMakeFiles/cmTC_aa9d7.dir/CheckSymbolExists.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-wUpDg1/CheckSymbolExists.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_aa9d7.dir/CheckSymbolExists.c.o -o cmTC_aa9d7  -ldl && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "CMake/resources.cmake:260 (check_symbol_exists)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-P8YWWN"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-P8YWWN"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "HAVE_LOCALECONV"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-P8YWWN'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_08faf
+        [1/2] /usr/bin/cc    -o CMakeFiles/cmTC_08faf.dir/CheckSymbolExists.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-P8YWWN/CheckSymbolExists.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_08faf.dir/CheckSymbolExists.c.o -o cmTC_08faf   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "CMake/resources.cmake:264 (check_symbol_exists)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-178RCC"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-178RCC"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "HAVE_PNG_GET_VALID"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-178RCC'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_0b407
+        [1/2] /usr/bin/cc    -o CMakeFiles/cmTC_0b407.dir/CheckSymbolExists.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-178RCC/CheckSymbolExists.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_0b407.dir/CheckSymbolExists.c.o -o cmTC_0b407  /usr/lib/x86_64-linux-gnu/libpng.so && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "CMake/resources.cmake:265 (check_symbol_exists)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-1yGnFw"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-1yGnFw"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "HAVE_PNG_SET_TRNS_TO_ALPHA"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-1yGnFw'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_1007b
+        [1/2] /usr/bin/cc    -o CMakeFiles/cmTC_1007b.dir/CheckSymbolExists.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-1yGnFw/CheckSymbolExists.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_1007b.dir/CheckSymbolExists.c.o -o cmTC_1007b  /usr/lib/x86_64-linux-gnu/libpng.so && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "CMake/resources.cmake:269 (check_symbol_exists)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-EQMngv"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-EQMngv"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "HAVE_SCANDIR"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-EQMngv'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_fa155
+        [1/2] /usr/bin/cc    -o CMakeFiles/cmTC_fa155.dir/CheckSymbolExists.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-EQMngv/CheckSymbolExists.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_fa155.dir/CheckSymbolExists.c.o -o cmTC_fa155   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "CMake/resources.cmake:270 (check_symbol_exists)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-qJPJU9"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-qJPJU9"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "HAVE_SNPRINTF"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-qJPJU9'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_7ea36
+        [1/2] /usr/bin/cc    -o CMakeFiles/cmTC_7ea36.dir/CheckSymbolExists.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-qJPJU9/CheckSymbolExists.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_7ea36.dir/CheckSymbolExists.c.o -o cmTC_7ea36   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "CMake/resources.cmake:277 (check_symbol_exists)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-KozvXx"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-KozvXx"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "HAVE_STRCASECMP"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-KozvXx'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_d5d73
+        [1/2] /usr/bin/cc    -o CMakeFiles/cmTC_d5d73.dir/CheckSymbolExists.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-KozvXx/CheckSymbolExists.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_d5d73.dir/CheckSymbolExists.c.o -o cmTC_d5d73   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "CMake/resources.cmake:279 (check_symbol_exists)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-iCc4R2"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-iCc4R2"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "HAVE_STRLCAT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-iCc4R2'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_b8e70
+        [1/2] /usr/bin/cc    -o CMakeFiles/cmTC_b8e70.dir/CheckSymbolExists.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-iCc4R2/CheckSymbolExists.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_b8e70.dir/CheckSymbolExists.c.o -o cmTC_b8e70   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "CMake/resources.cmake:280 (check_symbol_exists)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-w5NBhC"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-w5NBhC"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "HAVE_STRLCPY"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-w5NBhC'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_b481b
+        [1/2] /usr/bin/cc    -o CMakeFiles/cmTC_b481b.dir/CheckSymbolExists.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-w5NBhC/CheckSymbolExists.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_b481b.dir/CheckSymbolExists.c.o -o cmTC_b481b   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "CMake/resources.cmake:281 (check_symbol_exists)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-bqaiSt"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-bqaiSt"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "HAVE_VSNPRINTF"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-bqaiSt'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_1bd44
+        [1/2] /usr/bin/cc    -o CMakeFiles/cmTC_1bd44.dir/CheckSymbolExists.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-bqaiSt/CheckSymbolExists.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_1bd44.dir/CheckSymbolExists.c.o -o cmTC_1bd44   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "CMake/resources.cmake:283 (check_symbol_exists)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-l5dida"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-l5dida"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "HAVE_SETENV"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-l5dida'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_88d68
+        [1/2] /usr/bin/cc    -o CMakeFiles/cmTC_88d68.dir/CheckSymbolExists.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-l5dida/CheckSymbolExists.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_88d68.dir/CheckSymbolExists.c.o -o cmTC_88d68   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "CMake/resources.cmake:290 (check_symbol_exists)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-36lCet"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-36lCet"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "HAVE_TRUNC"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-36lCet'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_62b57
+        [1/2] /usr/bin/cc    -o CMakeFiles/cmTC_62b57.dir/CheckSymbolExists.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-36lCet/CheckSymbolExists.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_62b57.dir/CheckSymbolExists.c.o -o cmTC_62b57  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "CMake/resources.cmake:297 (try_compile)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeTmp"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "V"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_35983
+        [1/2] /usr/bin/c++    -o CMakeFiles/cmTC_35983.dir/posixScandir.cxx.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake/posixScandir.cxx
+        [2/2] : && /usr/bin/c++   CMakeFiles/cmTC_35983.dir/posixScandir.cxx.o -o cmTC_35983   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "CMake/options.cmake:232 (check_include_file)"
+      - "CMakeLists.txt:78 (include)"
+    checks:
+      - "Looking for png.h"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-buJ7HT"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-buJ7HT"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "HAVE_PNG_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-buJ7HT'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_862d5
+        [1/2] /usr/bin/cc    -o CMakeFiles/cmTC_862d5.dir/CheckIncludeFile.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-buJ7HT/CheckIncludeFile.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_862d5.dir/CheckIncludeFile.c.o -o cmTC_862d5   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckLibraryExists.cmake:78 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/FindX11.cmake:693 (check_library_exists)"
+      - "CMake/options.cmake:401 (include)"
+      - "CMakeLists.txt:78 (include)"
+    checks:
+      - "Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-AMsOiL"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-AMsOiL"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "X11_LIB_X11_SOLO"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-AMsOiL'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_bf97b
+        [1/2] /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay -o CMakeFiles/cmTC_bf97b.dir/CheckFunctionExists.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-AMsOiL/CheckFunctionExists.c
+        [2/2] : && /usr/bin/cc -DCHECK_FUNCTION_EXISTS=XOpenDisplay  CMakeFiles/cmTC_bf97b.dir/CheckFunctionExists.c.o -o cmTC_bf97b  /usr/lib/x86_64-linux-gnu/libX11.so  /usr/lib/x86_64-linux-gnu/libXext.so && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/FindX11.cmake:708 (check_function_exists)"
+      - "CMake/options.cmake:401 (include)"
+      - "CMakeLists.txt:78 (include)"
+    checks:
+      - "Looking for gethostbyname"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-6BTzHO"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-6BTzHO"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "CMAKE_HAVE_GETHOSTBYNAME"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-6BTzHO'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_951d1
+        [1/2] /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname -o CMakeFiles/cmTC_951d1.dir/CheckFunctionExists.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-6BTzHO/CheckFunctionExists.c
+        [2/2] : && /usr/bin/cc -DCHECK_FUNCTION_EXISTS=gethostbyname  CMakeFiles/cmTC_951d1.dir/CheckFunctionExists.c.o -o cmTC_951d1   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/FindX11.cmake:722 (check_function_exists)"
+      - "CMake/options.cmake:401 (include)"
+      - "CMakeLists.txt:78 (include)"
+    checks:
+      - "Looking for connect"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-rrMCpx"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-rrMCpx"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "CMAKE_HAVE_CONNECT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-rrMCpx'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_b4b0e
+        [1/2] /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect -o CMakeFiles/cmTC_b4b0e.dir/CheckFunctionExists.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-rrMCpx/CheckFunctionExists.c
+        [2/2] : && /usr/bin/cc -DCHECK_FUNCTION_EXISTS=connect  CMakeFiles/cmTC_b4b0e.dir/CheckFunctionExists.c.o -o cmTC_b4b0e   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/FindX11.cmake:731 (check_function_exists)"
+      - "CMake/options.cmake:401 (include)"
+      - "CMakeLists.txt:78 (include)"
+    checks:
+      - "Looking for remove"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-5stzr1"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-5stzr1"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "CMAKE_HAVE_REMOVE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-5stzr1'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_579f6
+        [1/2] /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove -o CMakeFiles/cmTC_579f6.dir/CheckFunctionExists.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-5stzr1/CheckFunctionExists.c
+        [2/2] : && /usr/bin/cc -DCHECK_FUNCTION_EXISTS=remove  CMakeFiles/cmTC_579f6.dir/CheckFunctionExists.c.o -o cmTC_579f6   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/FindX11.cmake:740 (check_function_exists)"
+      - "CMake/options.cmake:401 (include)"
+      - "CMakeLists.txt:78 (include)"
+    checks:
+      - "Looking for shmat"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-5xZnlM"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-5xZnlM"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "CMAKE_HAVE_SHMAT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-5xZnlM'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_16609
+        [1/2] /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat -o CMakeFiles/cmTC_16609.dir/CheckFunctionExists.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-5xZnlM/CheckFunctionExists.c
+        [2/2] : && /usr/bin/cc -DCHECK_FUNCTION_EXISTS=shmat  CMakeFiles/cmTC_16609.dir/CheckFunctionExists.c.o -o cmTC_16609   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckLibraryExists.cmake:78 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/FindX11.cmake:750 (check_library_exists)"
+      - "CMake/options.cmake:401 (include)"
+      - "CMakeLists.txt:78 (include)"
+    checks:
+      - "Looking for IceConnectionNumber in ICE"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-KP8LNY"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-KP8LNY"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "CMAKE_LIB_ICE_HAS_ICECONNECTIONNUMBER"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-KP8LNY'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_9d7aa
+        [1/2] /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -o CMakeFiles/cmTC_9d7aa.dir/CheckFunctionExists.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-KP8LNY/CheckFunctionExists.c
+        [2/2] : && /usr/bin/cc -DCHECK_FUNCTION_EXISTS=IceConnectionNumber  CMakeFiles/cmTC_9d7aa.dir/CheckFunctionExists.c.o -o cmTC_9d7aa  -lICE && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "CMake/options.cmake:710 (check_symbol_exists)"
+      - "CMakeLists.txt:78 (include)"
+    checks:
+      - "Looking for glXGetProcAddressARB"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-IBgkTI"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-IBgkTI"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "HAVE_GLXGETPROCADDRESSARB"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-IBgkTI'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_0d848
+        [1/2] /usr/bin/cc  -I/usr/include/GL  -o CMakeFiles/cmTC_0d848.dir/CheckSymbolExists.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-IBgkTI/CheckSymbolExists.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_0d848.dir/CheckSymbolExists.c.o -o cmTC_0d848  -L/usr/lib/x86_64-linux-gnu  -L/usr/lib/x86_64-linux-gnu  -lX11  -lGLU  -lGL && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.31/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "/usr/share/cmake-3.31/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "CMake/options.cmake:747 (include)"
+      - "CMakeLists.txt:78 (include)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-5gpbsa"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-5gpbsa"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-5gpbsa'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_74bf7
+        [1/2] /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD -I/usr/include/GL  -o CMakeFiles/cmTC_74bf7.dir/src.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeScratch/TryCompile-5gpbsa/src.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_74bf7.dir/src.c.o -o cmTC_74bf7   && :
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "CMake/resources.cmake:149 (try_compile)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeTmp"
+      binary: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake"
+    buildResult:
+      variable: "HAVE_PTHREAD_MUTEX_RECURSIVE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_838c1
+        [1/2] /usr/bin/cc    -o CMakeFiles/cmTC_838c1.dir/pthread_mutex_recursive.c.o -c /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/CMake/pthread_mutex_recursive.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_838c1.dir/pthread_mutex_recursive.c.o -o cmTC_838c1   && :
+        
+      exitCode: 0
+...
