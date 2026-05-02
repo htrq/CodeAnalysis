@@ -32,7 +32,4 @@ void tipTree::initTipTree() {
             .description = "Ищет побочные эффекты внутри assert(...). В "
                            "release-сборке assert отключается, и важный код "
                            "внутри него может не выполниться."}});
-  Fl_Tooltip::enable(1);
-  Fl_Tooltip::size(14);
-  Fl_Tooltip::font(FL_FREE_FONT);
 }

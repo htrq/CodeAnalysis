@@ -5,6 +5,7 @@
 #include <FL/Enumerations.H>
 #include <FL/Fl_Double_Window.H>
 #include <FL/Fl_File_Input.H>
+#include <FL/Fl_Tooltip.H>
 #include <FL/Fl_Tree.H>
 #include <FL/Fl_Button.H>
 #include <FL/Fl_Group.H>
@@ -19,10 +20,14 @@
 
 void mainWindow::createWindow() {
   Fl::set_font(FL_HELVETICA, "DejaVu Sans");
-  std::println("font name: {}",Fl::get_font_name(FL_HELVETICA));
+  Fl::set_font(FL_HELVETICA_BOLD, "DejaVu Sans");
+  Fl::set_font(FL_COURIER, "DejaVu Sans Mono");
 
-  auto *window = new Fl_Double_Window(612, 230, 763, 503, "окно");
+  Fl_Tooltip::font(FL_HELVETICA);
+  Fl_Tooltip::size(14);
 
+  auto *window = new Fl_Double_Window(612, 230, 1134, 508, "окно");
+  window->tooltip("Привет!!");
   auto *tabs = new Fl_Tabs(19, 27, 716, 267);
   {
     auto *group1 = new Fl_Group(25, 69, 714, 216);
@@ -122,7 +127,7 @@ void mainWindow::createWindow() {
   }
   groupTerminal->end();
 
-  
+  auto* tipBox = new Fl_Box(774, 69, 339, 419, "лейбл");
 
   window->end();
   window->show();
