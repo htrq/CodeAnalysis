@@ -13,7 +13,7 @@ ${CMAKE_CURRENT_SOURCE_DIR}/src/linuxTerminal.cpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/tipTree.cpp
 )
 
-set(FLTK_DIR "${CMAKE_CURRENT_SOURCE_DIR}/third-party/fltk-1.4.5/build")
+set(FLTK_DIR "${CMAKE_CURRENT_SOURCE_DIR}/third-party/fltk-1.4.5/")
 find_package(FLTK CONFIG REQUIRED)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE
