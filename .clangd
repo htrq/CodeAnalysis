@@ -19,7 +19,7 @@ Diagnostics:
   MissingIncludes: Strict
 
 CompileFlags:
-  CompilationDatabase: build-debug
+  CompilationDatabase: build
 
 Index:
   StandardLibrary: Yes
