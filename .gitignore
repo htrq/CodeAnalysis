@@ -44,8 +44,9 @@
 build/
 build-debug/
 
-#also ignore cmakeuserpresets
+#also ignore user specific stuff
 CMakeUserPresets.json
+.clangd
 
 # interface file with positions
 interface
