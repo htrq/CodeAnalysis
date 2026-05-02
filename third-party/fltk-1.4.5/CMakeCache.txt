@@ -337,7 +337,7 @@ FLTK_DOCDIR:PATH=share/doc
 FLTK_FLUID_EXECUTABLE:STRING=fltk::fluid
 
 //FLTK Git revision (do not change)
-FLTK_GIT_REVISION:STRING=7511109f581a6da59caecf2457ca0bc8168b3044
+FLTK_GIT_REVISION:STRING=a9b1113516ffd15fc7602a6d425a317df30f4720
 
 //all drawing to X11 windows uses Cairo
 FLTK_GRAPHICS_CAIRO:BOOL=OFF
@@ -388,7 +388,7 @@ FLTK_OPTION_STD:BOOL=OFF
 FLTK_OPTION_SVG:BOOL=ON
 
 //Value Computed by CMake
-FLTK_SOURCE_DIR:STATIC=/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source
+FLTK_SOURCE_DIR:STATIC=/home/htrq/Downloads/fltk-1.4.5
 
 //use lib Pango
 FLTK_USE_PANGO:BOOL=OFF
@@ -1030,7 +1030,7 @@ CMAKE_HAVE_REMOVE:INTERNAL=1
 CMAKE_HAVE_SHMAT:INTERNAL=1
 //Source directory with the top level CMakeLists.txt file for this
 // project
-CMAKE_HOME_DIRECTORY:INTERNAL=/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source
+CMAKE_HOME_DIRECTORY:INTERNAL=/home/htrq/Downloads/fltk-1.4.5
 //ADVANCED property for variable: CMAKE_INSTALL_BINDIR
 CMAKE_INSTALL_BINDIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_INSTALL_DATADIR

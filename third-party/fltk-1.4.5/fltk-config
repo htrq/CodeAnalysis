@@ -47,7 +47,7 @@ BINARY_DIR=/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5
 prefix="/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5"
 exec_prefix="${prefix}"
 exec_prefix_set=no
-includedir="/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source"
+includedir="/home/htrq/Downloads/fltk-1.4.5"
 libdir="${exec_prefix}/lib"
 srcdir="."
 

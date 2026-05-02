@@ -50,14 +50,14 @@ unset(_cmake_expected_targets)
 add_library(fltk::jpeg STATIC IMPORTED)
 
 set_target_properties(fltk::jpeg PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/jpeg"
+  INTERFACE_INCLUDE_DIRECTORIES "/home/htrq/Downloads/fltk-1.4.5/jpeg"
 )
 
 # Create imported target fltk::fltk
 add_library(fltk::fltk STATIC IMPORTED)
 
 set_target_properties(fltk::fltk PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/src/..;/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/src/..;/usr/include"
+  INTERFACE_INCLUDE_DIRECTORIES "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/src/..;/home/htrq/Downloads/fltk-1.4.5/src/..;/usr/include"
   INTERFACE_LINK_DIRECTORIES "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5/src/../lib"
   INTERFACE_LINK_LIBRARIES "/usr/lib/x86_64-linux-gnu/libdl.a;/usr/lib/x86_64-linux-gnu/libSM.so;/usr/lib/x86_64-linux-gnu/libICE.so;/usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so;/usr/lib/x86_64-linux-gnu/libXinerama.so;/usr/lib/x86_64-linux-gnu/libXfixes.so;/usr/lib/x86_64-linux-gnu/libXcursor.so;/usr/lib/x86_64-linux-gnu/libXrender.so;/usr/lib/x86_64-linux-gnu/libXft.so;/usr/lib/x86_64-linux-gnu/libfontconfig.so"
 )
@@ -73,7 +73,7 @@ set_target_properties(fltk::forms PROPERTIES
 add_library(fltk::images STATIC IMPORTED)
 
 set_target_properties(fltk::images PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/jpeg"
+  INTERFACE_INCLUDE_DIRECTORIES "/home/htrq/Downloads/fltk-1.4.5/jpeg"
   INTERFACE_LINK_LIBRARIES "fltk::fltk;/usr/lib/x86_64-linux-gnu/libpng.so;/usr/lib/x86_64-linux-gnu/libz.so;\$<LINK_ONLY:fltk::jpeg>"
 )
 

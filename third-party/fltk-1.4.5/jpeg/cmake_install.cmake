@@ -1,4 +1,4 @@
-# Install script for directory: /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/jpeg
+# Install script for directory: /home/htrq/Downloads/fltk-1.4.5/jpeg
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -48,11 +48,11 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/FL/images" TYPE FILE FILES
-    "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/jpeg/jconfig.h"
-    "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/jpeg/jerror.h"
-    "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/jpeg/jmorecfg.h"
-    "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/jpeg/jpeglib.h"
-    "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/jpeg/fltk_jpeg_prefix.h"
+    "/home/htrq/Downloads/fltk-1.4.5/jpeg/jconfig.h"
+    "/home/htrq/Downloads/fltk-1.4.5/jpeg/jerror.h"
+    "/home/htrq/Downloads/fltk-1.4.5/jpeg/jmorecfg.h"
+    "/home/htrq/Downloads/fltk-1.4.5/jpeg/jpeglib.h"
+    "/home/htrq/Downloads/fltk-1.4.5/jpeg/fltk_jpeg_prefix.h"
     )
 endif()
 

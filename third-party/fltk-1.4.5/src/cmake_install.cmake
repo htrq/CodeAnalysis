@@ -1,4 +1,4 @@
-# Install script for directory: /home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source/src
+# Install script for directory: /home/htrq/Downloads/fltk-1.4.5/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

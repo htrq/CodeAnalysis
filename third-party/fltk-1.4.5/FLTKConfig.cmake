@@ -38,7 +38,7 @@ set(FLTK_VERSION 1.4.5)
 
 include(${CMAKE_CURRENT_LIST_DIR}/FLTK-Targets.cmake)
 
-set(FLTK_INCLUDE_DIRS "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5;/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5_source")
+set(FLTK_INCLUDE_DIRS "/home/htrq/prog/CodeAnalysis/third-party/fltk-1.4.5;/home/htrq/Downloads/fltk-1.4.5")
 set(FLTK_LIBRARIES "fltk_jpeg;fltk;fltk_forms;fltk_images;fltk_gl")
 
 # For compatibility with CMake's FindFLTK.cmake:
