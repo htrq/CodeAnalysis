@@ -42,7 +42,9 @@
 
 # my build directory
 build/
-build-debug/
+
+#my third-party directory
+third-party/
 
 #also ignore user specific stuff
 CMakeUserPresets.json
