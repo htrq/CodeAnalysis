@@ -19,6 +19,3 @@ target_include_directories(${PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
-get_target_property(inc fltk::fltk INTERFACE_INCLUDE_DIRECTORIES)
-message(STATUS "FLTK includes = ${inc}")
-

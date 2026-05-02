@@ -1,11 +1,5 @@
 [requires]
-fltk/1.4.4
-
+fltk/1.4.5
 [generators]
-CMakeToolchain
 CMakeDeps
-
-[options]
-fltk/*:shared=True
-fltk/*:use_xft=True
-fltk/*:use_freetype=True
+CMakeToolchain
