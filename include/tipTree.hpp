@@ -7,8 +7,6 @@
 #include <string>
 
 class tipTree : public Fl_Tree {
-  int posX{};
-  int posY{};
   Fl_Tree_Item *itemShowingTip{};
   Fl_Tooltip *tooltip{};
   const char *itemLabel{};
