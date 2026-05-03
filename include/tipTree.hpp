@@ -17,7 +17,7 @@ class tipTree : public Fl_Tree {
     std::string description;
   };
 
-  inline static std::unordered_map<std::string, Info> mapData;
+  inline static std::unordered_map<std::string, std::string> mapData;
 
 
 

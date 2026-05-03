@@ -27,7 +27,6 @@ void mainWindow::createWindow() {
   Fl_Tooltip::size(14);
 
   auto *window = new Fl_Double_Window(612, 230, 777, 508, "окно");
-  window->tooltip("Привет!!");
   auto *tabs = new Fl_Tabs(19, 27, 716, 267);
   {
     auto *group1 = new Fl_Group(25, 69, 714, 216);
@@ -37,9 +36,9 @@ void mainWindow::createWindow() {
     auto *tree = new tipTree(35, 130, 655, 108);
     tree->begin();
     tree->initTipTree();
-    tree->callback(tipTree::treeCb);
     tree->selectmode(FL_TREE_SELECT_MULTI);
     tree->root_label("sections");
+    tree->callback(tipTree::treeCb);
     
     tree->add("bugprone/assert-side-effect");
     tree->add("bugprone/copy-constructor-init");
