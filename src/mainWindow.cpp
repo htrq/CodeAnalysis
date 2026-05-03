@@ -1,21 +1,22 @@
 #include "../include/mainWindow.hpp"
 #include "../include/linuxTerminal.hpp"
-#include "../include/widgetData.hpp"
 #include "../include/tipTree.hpp"
+#include "../include/widgetData.hpp"
+#include "checkBox.AST.hpp"
 #include <FL/Enumerations.H>
+#include <FL/Fl.H>
+#include <FL/Fl_Box.H>
+#include <FL/Fl_Button.H>
+#include <FL/Fl_Check_Button.H>
 #include <FL/Fl_Double_Window.H>
 #include <FL/Fl_File_Input.H>
-#include <FL/Fl_Tooltip.H>
-#include <FL/Fl_Tree.H>
-#include <FL/Fl_Button.H>
 #include <FL/Fl_Group.H>
 #include <FL/Fl_Tabs.H>
 #include <FL/Fl_Terminal.H>
-#include <FL/Fl.H>
-#include <FL/Fl_Box.H>
+#include <FL/Fl_Tooltip.H>
+#include <FL/Fl_Tree.H>
 #include <FL/Fl_Wizard.H>
 #include <FL/fl_config.h>
-#include <FL/Fl_Check_Button.H>
 #include <clocale>
 #include <print>
 
@@ -33,14 +34,14 @@ void mainWindow::createWindow() {
     auto *group1 = new Fl_Group(25, 69, 714, 216);
     group1->label("clang-tidy");
     group1->labelfont(14);
-    
+
     auto *tree = new tipTree(35, 135, 718, 148);
     tree->begin();
     tree->initTipTree();
     tree->selectmode(FL_TREE_SELECT_MULTI);
     tree->root_label("sections");
     tree->callback(tipTree::treeCb);
-    
+
     tree->add("bugprone/assert-side-effect");
     tree->add("bugprone/copy-constructor-init");
     tree->add("bugprone/infinite-loop");
@@ -82,12 +83,12 @@ void mainWindow::createWindow() {
     tree->add("performance/move-const-arg");
     tree->add("performance/unnecessary-copy-initialization");
     tree->add("performance/inefficient-string-concatenation");
-    
+
     tree->add("cppcoreguidelines/owning-memory");
     tree->add("cppcoreguidelines/pro-type-cstyle-cast");
     tree->add("cppcoreguidelines/special-member-functions");
     tree->add("cppcoreguidelines/avoid-goto");
-    
+
     tree->add("misc/definitions-in-headers");
     tree->add("misc/unused-parameters");
     tree->add("misc/non-private-member-variables-in-classes");
@@ -95,15 +96,21 @@ void mainWindow::createWindow() {
     std::println("Tree created!");
 
     tree->end();
-    
 
-    auto* enableAST = new Fl_Check_Button(43, 99, 116, 22, "enable AST");
-    
     auto *fileInput = new Fl_File_Input(227, 95, 422, 32);
     fileInput->label("AST file:");
 
-    auto* browseButton = new Fl_Button(653, 99, 100, 28);
-    browseButton->label("browse..");
+    auto *browseButton = new Fl_Button(653, 99, 100, 28, "browse...");
+
+    auto *enableAST = new checkBoxAST(43, 99, 116, 22, "enable AST");
+    checkBoxAST::addWidgetsToControl(fileInput, browseButton);
+    enableAST->value(1);
+    enableAST->callback(checkBoxAST::controlCb, &checkBoxAST::wtc);
+    enableAST
+        ->tooltip("AST — промежуточное представление кода в виде дерева.\n"
+                  "Вкл.: быстрый анализ, но может пропустить макросы/шаблоны.\n"
+                  "Выкл.: медленнее, зато проверяет реальный код после "
+                  "препроцессора.");
 
     group1->end();
     auto *group2 = new Fl_Group(25, 69, 714, 216);
@@ -123,8 +130,8 @@ void mainWindow::createWindow() {
     auto *term = new linuxTerminal(24, 316, 740, 244);
     term->enterFirstPromt();
     term->createPTY();
-    
-    //windows terminal
+
+    // windows terminal
   }
   groupTerminal->end();
 
@@ -133,7 +140,7 @@ void mainWindow::createWindow() {
 }
 
 void mainWindow::changeTabCallback(Fl_Widget *widget, void *data) {
-  auto *tabs = static_cast<Fl_Tabs *>(widget);// наверное убрать потом
+  auto *tabs = static_cast<Fl_Tabs *>(widget); // наверное убрать потом
   auto *pages = static_cast<widgetData::tabsPages *>(data);
 
   switch (pages->getIndex()) {
