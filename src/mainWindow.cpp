@@ -15,6 +15,7 @@
 #include <FL/Fl_Box.H>
 #include <FL/Fl_Wizard.H>
 #include <FL/fl_config.h>
+#include <FL/Fl_Check_Button.H>
 #include <clocale>
 #include <print>
 
@@ -26,14 +27,14 @@ void mainWindow::createWindow() {
   Fl_Tooltip::font(FL_HELVETICA);
   Fl_Tooltip::size(14);
 
-  auto *window = new Fl_Double_Window(612, 230, 777, 508, "окно");
-  auto *tabs = new Fl_Tabs(19, 27, 716, 267);
+  auto *window = new Fl_Double_Window(612, 230, 777, 572, "окно");
+  auto *tabs = new Fl_Tabs(19, 27, 744, 274);
   {
     auto *group1 = new Fl_Group(25, 69, 714, 216);
     group1->label("clang-tidy");
     group1->labelfont(14);
     
-    auto *tree = new tipTree(35, 130, 655, 108);
+    auto *tree = new tipTree(35, 135, 718, 148);
     tree->begin();
     tree->initTipTree();
     tree->selectmode(FL_TREE_SELECT_MULTI);
@@ -96,11 +97,12 @@ void mainWindow::createWindow() {
     tree->end();
     
 
+    auto* enableAST = new Fl_Check_Button(43, 99, 116, 22, "enable AST");
     
-    auto *fileInput = new Fl_File_Input(66, 83, 506, 32);
-    fileInput->label("file:");
+    auto *fileInput = new Fl_File_Input(227, 95, 422, 32);
+    fileInput->label("AST file:");
 
-    auto* browseButton = new Fl_Button(590, 87, 100, 28);
+    auto* browseButton = new Fl_Button(653, 99, 100, 28);
     browseButton->label("browse..");
 
     group1->end();
@@ -115,10 +117,10 @@ void mainWindow::createWindow() {
   }
   tabs->end();
 
-  auto *groupTerminal = new Fl_Group(18, 302, 721, 196);
+  auto *groupTerminal = new Fl_Group(18, 302, 746, 258);
   {
 
-    auto *term = new linuxTerminal(22, 303, 716, 192);
+    auto *term = new linuxTerminal(24, 316, 740, 244);
     term->enterFirstPromt();
     term->createPTY();
     

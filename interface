@@ -4,8 +4,8 @@ header_name {.h}
 code_name {.cxx}
 Function {make_window()} {open
 } {
-  Fl_Window {} {open selected
-    xywh {0 0 777 508} type Double visible
+  Fl_Window {} {open
+    xywh {0 0 777 572} type Double visible
   } {
     Fl_Tabs {} {open
       xywh {19 27 744 274}
@@ -15,21 +15,19 @@ Function {make_window()} {open
         xywh {25 69 738 228}
       } {
         Fl_Tree {} {
-          xywh {35 130 655 108}
+          xywh {35 135 718 148}
         }
         Fl_File_Input {} {
-          label {file:}
-          xywh {66 83 506 32}
-        }
-        Fl_Box {} {
-          xywh {699 83 30 32}
-        }
-        Fl_Box {} {
-          xywh {699 206 30 32}
+          label {file:} selected
+          xywh {227 95 422 32}
         }
         Fl_Button {} {
           label Button
-          xywh {590 87 100 28}
+          xywh {653 99 100 28}
+        }
+        Fl_Check_Button {} {
+          label Button
+          xywh {43 99 116 22} down_box DOWN_BOX
         }
       }
       Fl_Group {} {
@@ -42,10 +40,10 @@ Function {make_window()} {open
       } {}
     }
     Fl_Group {} {open
-      xywh {18 302 736 196}
+      xywh {18 302 746 258}
     } {
       Fl_Terminal {} {
-        xywh {22 303 732 192} align 5
+        xywh {24 316 740 244} align 5
       }
     }
   }
