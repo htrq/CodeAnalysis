@@ -10,6 +10,7 @@
 #include <FL/Fl_Button.H>
 #include <FL/Fl_Check_Button.H>
 #include <FL/Fl_Double_Window.H>
+#include <FL/Fl_File_Chooser.H>
 #include <FL/Fl_File_Input.H>
 #include <FL/Fl_Group.H>
 #include <FL/Fl_Tabs.H>
@@ -21,6 +22,10 @@
 #include <FL/Fl_Tree_Item.H>
 #include <FL/Fl_Wizard.H>
 #include <FL/fl_config.h>
+#include <Fl/Fl_Button.H>
+#include <Fl/Fl_Text_Buffer.H>
+#include <Fl/Fl_Text_Display.H>
+#include <Fl/fl_ask.H>
 #include <clocale>
 #include <print>
 #include <string>
@@ -39,6 +44,11 @@ void addButtonCb(Fl_Widget *widget, void *data) {
     // commandBuilderCT::addASTPath(astPath, astValue);
     commandBuilderCT::printCommand(*buffer);
   }
+}
+
+void clearButtonCb(Fl_Widget* widget, void* data) {
+  auto* commandBuffer = static_cast<Fl_Text_Buffer*>(data);
+  commandBuffer->text("");
 }
 } // namespace
 
@@ -106,6 +116,14 @@ void mainWindow::createWindow() {
 
     auto *mainFileInput = new Fl_File_Input(227, 63, 422, 32, "main.cpp:");
     mainFileInput->tooltip("Укажите путь до main.cpp файла проекта");
+    mainFileInput->callback([](Fl_Widget* widget, void* data) -> void {
+      auto* input = static_cast<Fl_File_Input*>(data);
+      char* file = fl_file_chooser("Выберите main.cpp", "*.*", nullptr);
+      if (file != nullptr) {
+        input->value(file);
+      }
+    }, mainFileInput);
+    
 
     auto *fileInput = new Fl_File_Input(227, 95, 422, 32);
     fileInput->label("AST file:");
@@ -113,11 +131,19 @@ void mainWindow::createWindow() {
         "Укажите compile_commands.json — инструкцию для clang-tidy,"
         "как собирать проект (include-пути, стандарт C++, define'ы)."
         "Без этого файла анализ будет неполным и неточным.");
+    fileInput->callback([](Fl_Widget* widget, void* data) -> void {
+      auto* input = static_cast<Fl_File_Input*>(data);
+      char* file = fl_dir_chooser("Выберите папку, содержащую compile_commands.json", nullptr);
+      if (file != nullptr) {
+        input->value(file);
+      }
+    }, fileInput);
 
-    auto *browseButton = new Fl_Button(653, 99, 100, 28, "Обзор...");
+    auto* browseMainButton = new Fl_Button(653, 67, 100, 28, "Обзор...");
+    auto* browseAstButton = new Fl_Button(653, 99, 100, 28, "Обзор...");
 
     auto *enableAST = new checkBoxAST(43, 99, 116, 22, "enable AST");
-    checkBoxAST::addWidgetsToControl(fileInput, browseButton);
+    checkBoxAST::addWidgetsToControl(fileInput, browseAstButton);
     enableAST->value(1);
     enableAST->callback(checkBoxAST::controlCb, &checkBoxAST::wtc);
     enableAST->tooltip(
@@ -139,6 +165,9 @@ void mainWindow::createWindow() {
     addButtonCtx->astPath = fileInput;
     addButtonCtx->tree = tree;
     addButton->callback(addButtonCb, addButtonCtx);
+
+    auto* clearButton = new Fl_Button(539, 285, 100, 24, "Очистить");
+    clearButton->callback(clearButtonCb, commandBuffer);
 
     group1->end();
     auto *group2 = new Fl_Group(25, 69, 738, 303);

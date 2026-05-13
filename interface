@@ -41,8 +41,16 @@ Function {make_window()} {open
           xywh {643 285 110 24}
         }
         Fl_File_Input {} {
-          label {file:} selected
+          label {file:}
           xywh {227 63 422 32}
+        }
+        Fl_Button {} {
+          label Button
+          xywh {539 285 100 24}
+        }
+        Fl_Button {} {
+          label Button selected
+          xywh {653 67 100 28}
         }
       }
       Fl_Group {} {
