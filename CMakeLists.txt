@@ -16,6 +16,7 @@ ${CMAKE_CURRENT_SOURCE_DIR}/src/widgetData.cpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/linuxTerminal.cpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/tipTree.cpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/checkBoxAST.cpp
+${CMAKE_CURRENT_SOURCE_DIR}/src/commandBuilderCT.cpp
 )
 
 set(FLTK_DIR "${CMAKE_CURRENT_SOURCE_DIR}/third-party/fltk-1.4.5/")

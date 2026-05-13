@@ -12,7 +12,7 @@ Function {make_window()} {open
     } {
       Fl_Group {} {
         label group1 open
-        xywh {25 69 738 303}
+        xywh {25 63 738 309}
       } {
         Fl_Tree {} {
           xywh {35 135 718 148}
@@ -36,6 +36,14 @@ Function {make_window()} {open
           label Button
           xywh {43 99 116 22} down_box DOWN_BOX
         }
+        Fl_Button {} {
+          label Button
+          xywh {643 285 110 24}
+        }
+        Fl_File_Input {} {
+          label {file:} selected
+          xywh {227 63 422 32}
+        }
       }
       Fl_Group {} {
         label group2 open
@@ -46,7 +54,7 @@ Function {make_window()} {open
         xywh {19 69 738 232} hide
       } {}
     }
-    Fl_Group {} {open selected
+    Fl_Group {} {open
       xywh {19 315 745 348}
     } {
       Fl_Terminal {} {

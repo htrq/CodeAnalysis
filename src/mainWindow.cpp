@@ -1,4 +1,5 @@
 #include "../include/mainWindow.hpp"
+#include "../include/commandBuilderCT.hpp"
 #include "../include/linuxTerminal.hpp"
 #include "../include/tipTree.hpp"
 #include "../include/widgetData.hpp"
@@ -17,10 +18,29 @@
 #include <FL/Fl_Text_Display.H>
 #include <FL/Fl_Tooltip.H>
 #include <FL/Fl_Tree.H>
+#include <FL/Fl_Tree_Item.H>
 #include <FL/Fl_Wizard.H>
 #include <FL/fl_config.h>
 #include <clocale>
 #include <print>
+#include <string>
+
+namespace {
+void addButtonCb(Fl_Widget *widget, void *data) {
+  auto *context = static_cast<commandBuilderCLContext *>(data);
+  auto *item = context->tree->callback_item();
+  if (item != nullptr) {
+    std::string option = item->label();
+    std::println("label for option is: {}", option);
+    Fl_Text_Buffer *buffer = context->commandBuffer;
+    commandBuilderCT::addOption(option, *buffer);
+    std::string astPath{context->astPath->value()};
+    char astValue{context->astButton->value()};
+    // commandBuilderCT::addASTPath(astPath, astValue);
+    commandBuilderCT::printCommand(*buffer);
+  }
+}
+} // namespace
 
 void mainWindow::createWindow() {
   Fl::set_font(FL_HELVETICA, "DejaVu Sans");
@@ -33,7 +53,7 @@ void mainWindow::createWindow() {
   auto *window = new Fl_Double_Window(612, 230, 770, 677, "окно");
   auto *tabs = new Fl_Tabs(19, 27, 744, 345);
   {
-    auto *group1 = new Fl_Group(25, 69, 738, 303);
+    auto *group1 = new Fl_Group(25, 63, 738, 309);
     group1->label("clang-tidy");
     group1->labelfont(14);
 
@@ -44,45 +64,48 @@ void mainWindow::createWindow() {
     tree->root_label("sections");
     tree->callback(tipTree::treeCb);
 
-    tree->add("bugprone/bugprone-assert-side-effect");
-    tree->add("bugprone/bugprone-copy-constructor-init");
-    tree->add("bugprone/bugprone-infinite-loop");
-    tree->add("bugprone/bugprone-use-after-move");
-    tree->add("bugprone/bugprone-sizeof-expression");
-    tree->add("bugprone/bugprone-suspicious-missing-comma");
-    tree->add("bugprone/bugprone-virtual-near-miss");
+    tree->add("bugprone-*/bugprone-assert-side-effect");
+    tree->add("bugprone-*/bugprone-copy-constructor-init");
+    tree->add("bugprone-*/bugprone-infinite-loop");
+    tree->add("bugprone-*/bugprone-use-after-move");
+    tree->add("bugprone-*/bugprone-sizeof-expression");
+    tree->add("bugprone-*/bugprone-suspicious-missing-comma");
+    tree->add("bugprone-*/bugprone-virtual-near-miss");
 
-    tree->add("modernize/modernize-use-nullptr");
-    tree->add("modernize/modernize-use-override");
-    tree->add("modernize/modernize-loop-convert");
-    tree->add("modernize/modernize-make-unique");
-    tree->add("modernize/modernize-make-shared");
-    tree->add("modernize/modernize-use-auto");
-    tree->add("modernize/modernize-use-emplace");
+    tree->add("modernize-*/modernize-use-nullptr");
+    tree->add("modernize-*/modernize-use-override");
+    tree->add("modernize-*/modernize-loop-convert");
+    tree->add("modernize-*/modernize-make-unique");
+    tree->add("modernize-*/modernize-make-shared");
+    tree->add("modernize-*/modernize-use-auto");
+    tree->add("modernize-*/modernize-use-emplace");
 
-    tree->add("readability/readability-braces-around-statements");
-    tree->add("readability/readability-identifier-naming");
-    tree->add("readability/readability-function-size");
-    tree->add("readability/readability-magic-numbers");
-    tree->add("readability/readability-uppercase-literal-suffix");
+    tree->add("readability-*/readability-braces-around-statements");
+    tree->add("readability-*/readability-identifier-naming");
+    tree->add("readability-*/readability-function-size");
+    tree->add("readability-*/readability-magic-numbers");
+    tree->add("readability-*/readability-uppercase-literal-suffix");
 
-    tree->add("performance/performance-for-range-copy");
-    tree->add("performance/performance-move-const-arg");
-    tree->add("performance/performance-unnecessary-copy-initialization");
-    tree->add("performance/performance-inefficient-string-concatenation");
+    tree->add("performance-*/performance-for-range-copy");
+    tree->add("performance-*/performance-move-const-arg");
+    tree->add("performance-*/performance-unnecessary-copy-initialization");
+    tree->add("performance-*/performance-inefficient-string-concatenation");
 
-    tree->add("cppcoreguidelines/cppcoreguidelines-owning-memory");
-    tree->add("cppcoreguidelines/cppcoreguidelines-pro-type-cstyle-cast");
-    tree->add("cppcoreguidelines/cppcoreguidelines-special-member-functions");
-    tree->add("cppcoreguidelines/cppcoreguidelines-avoid-goto");
+    tree->add("cppcoreguidelines-*/cppcoreguidelines-owning-memory");
+    tree->add("cppcoreguidelines-*/cppcoreguidelines-pro-type-cstyle-cast");
+    tree->add("cppcoreguidelines-*/cppcoreguidelines-special-member-functions");
+    tree->add("cppcoreguidelines-*/cppcoreguidelines-avoid-goto");
 
-    tree->add("misc/misc-definitions-in-headers");
-    tree->add("misc/misc-unused-parameters");
-    tree->add("misc/misc-non-private-member-variables-in-classes");
-    tree->add("misc/misc-throw-by-value-catch-by-reference");
+    tree->add("misc-*/misc-definitions-in-headers");
+    tree->add("misc-*/misc-unused-parameters");
+    tree->add("misc-*/misc-non-private-member-variables-in-classes");
+    tree->add("misc-*/misc-throw-by-value-catch-by-reference");
     std::println("Tree created!");
 
     tree->end();
+
+    auto *mainFileInput = new Fl_File_Input(227, 63, 422, 32, "main.cpp:");
+    mainFileInput->tooltip("Укажите путь до main.cpp файла проекта");
 
     auto *fileInput = new Fl_File_Input(227, 95, 422, 32);
     fileInput->label("AST file:");
@@ -109,9 +132,13 @@ void mainWindow::createWindow() {
     auto *commandBuffer = new Fl_Text_Buffer();
     commandDisplay->buffer(commandBuffer);
 
-    commandBuffer->append("text");
-
     auto *addButton = new Fl_Button(643, 285, 110, 24, "Добавить");
+    auto *addButtonCtx = new commandBuilderCLContext;
+    addButtonCtx->astButton = enableAST;
+    addButtonCtx->commandBuffer = commandBuffer;
+    addButtonCtx->astPath = fileInput;
+    addButtonCtx->tree = tree;
+    addButton->callback(addButtonCb, addButtonCtx);
 
     group1->end();
     auto *group2 = new Fl_Group(25, 69, 738, 303);
