@@ -13,6 +13,8 @@
 #include <FL/Fl_Group.H>
 #include <FL/Fl_Tabs.H>
 #include <FL/Fl_Terminal.H>
+#include <FL/Fl_Text_Buffer.H>
+#include <FL/Fl_Text_Display.H>
 #include <FL/Fl_Tooltip.H>
 #include <FL/Fl_Tree.H>
 #include <FL/Fl_Wizard.H>
@@ -28,10 +30,10 @@ void mainWindow::createWindow() {
   Fl_Tooltip::font(FL_HELVETICA);
   Fl_Tooltip::size(14);
 
-  auto *window = new Fl_Double_Window(612, 230, 777, 572, "окно");
-  auto *tabs = new Fl_Tabs(19, 27, 744, 274);
+  auto *window = new Fl_Double_Window(612, 230, 770, 677, "окно");
+  auto *tabs = new Fl_Tabs(19, 27, 744, 345);
   {
-    auto *group1 = new Fl_Group(25, 69, 714, 216);
+    auto *group1 = new Fl_Group(25, 69, 738, 303);
     group1->label("clang-tidy");
     group1->labelfont(14);
 
@@ -42,81 +44,80 @@ void mainWindow::createWindow() {
     tree->root_label("sections");
     tree->callback(tipTree::treeCb);
 
-    tree->add("bugprone/assert-side-effect");
-    tree->add("bugprone/copy-constructor-init");
-    tree->add("bugprone/infinite-loop");
-    tree->add("bugprone/use-after-move");
-    tree->add("bugprone/sizeof-expression");
-    tree->add("bugprone/suspicious-missing-comma");
-    tree->add("bugprone/virtual-near-miss");
+    tree->add("bugprone/bugprone-assert-side-effect");
+    tree->add("bugprone/bugprone-copy-constructor-init");
+    tree->add("bugprone/bugprone-infinite-loop");
+    tree->add("bugprone/bugprone-use-after-move");
+    tree->add("bugprone/bugprone-sizeof-expression");
+    tree->add("bugprone/bugprone-suspicious-missing-comma");
+    tree->add("bugprone/bugprone-virtual-near-miss");
 
-    tree->add("modernize/use-nullptr");
-    tree->add("modernize/use-override");
-    tree->add("modernize/loop-convert");
-    tree->add("modernize/make-unique");
-    tree->add("modernize/make-shared");
-    tree->add("modernize/use-auto");
-    tree->add("modernize/use-emplace");
-    tree->add("bugprone/assert-side-effect");
-    tree->add("bugprone/copy-constructor-init");
-    tree->add("bugprone/infinite-loop");
-    tree->add("bugprone/use-after-move");
-    tree->add("bugprone/sizeof-expression");
-    tree->add("bugprone/suspicious-missing-comma");
-    tree->add("bugprone/virtual-near-miss");
+    tree->add("modernize/modernize-use-nullptr");
+    tree->add("modernize/modernize-use-override");
+    tree->add("modernize/modernize-loop-convert");
+    tree->add("modernize/modernize-make-unique");
+    tree->add("modernize/modernize-make-shared");
+    tree->add("modernize/modernize-use-auto");
+    tree->add("modernize/modernize-use-emplace");
 
-    tree->add("modernize/use-nullptr");
-    tree->add("modernize/use-override");
-    tree->add("modernize/loop-convert");
-    tree->add("modernize/make-unique");
-    tree->add("modernize/make-shared");
-    tree->add("modernize/use-auto");
-    tree->add("modernize/use-emplace");
+    tree->add("readability/readability-braces-around-statements");
+    tree->add("readability/readability-identifier-naming");
+    tree->add("readability/readability-function-size");
+    tree->add("readability/readability-magic-numbers");
+    tree->add("readability/readability-uppercase-literal-suffix");
 
-    tree->add("readability/braces-around-statements");
-    tree->add("readability/identifier-naming");
-    tree->add("readability/function-size");
-    tree->add("readability/magic-numbers");
-    tree->add("readability/uppercase-literal-suffix");
+    tree->add("performance/performance-for-range-copy");
+    tree->add("performance/performance-move-const-arg");
+    tree->add("performance/performance-unnecessary-copy-initialization");
+    tree->add("performance/performance-inefficient-string-concatenation");
 
-    tree->add("performance/for-range-copy");
-    tree->add("performance/move-const-arg");
-    tree->add("performance/unnecessary-copy-initialization");
-    tree->add("performance/inefficient-string-concatenation");
+    tree->add("cppcoreguidelines/cppcoreguidelines-owning-memory");
+    tree->add("cppcoreguidelines/cppcoreguidelines-pro-type-cstyle-cast");
+    tree->add("cppcoreguidelines/cppcoreguidelines-special-member-functions");
+    tree->add("cppcoreguidelines/cppcoreguidelines-avoid-goto");
 
-    tree->add("cppcoreguidelines/owning-memory");
-    tree->add("cppcoreguidelines/pro-type-cstyle-cast");
-    tree->add("cppcoreguidelines/special-member-functions");
-    tree->add("cppcoreguidelines/avoid-goto");
-
-    tree->add("misc/definitions-in-headers");
-    tree->add("misc/unused-parameters");
-    tree->add("misc/non-private-member-variables-in-classes");
-    tree->add("misc/throw-by-value-catch-by-reference");
+    tree->add("misc/misc-definitions-in-headers");
+    tree->add("misc/misc-unused-parameters");
+    tree->add("misc/misc-non-private-member-variables-in-classes");
+    tree->add("misc/misc-throw-by-value-catch-by-reference");
     std::println("Tree created!");
 
     tree->end();
 
     auto *fileInput = new Fl_File_Input(227, 95, 422, 32);
     fileInput->label("AST file:");
+    fileInput->tooltip(
+        "Укажите compile_commands.json — инструкцию для clang-tidy,"
+        "как собирать проект (include-пути, стандарт C++, define'ы)."
+        "Без этого файла анализ будет неполным и неточным.");
 
-    auto *browseButton = new Fl_Button(653, 99, 100, 28, "browse...");
+    auto *browseButton = new Fl_Button(653, 99, 100, 28, "Обзор...");
 
     auto *enableAST = new checkBoxAST(43, 99, 116, 22, "enable AST");
     checkBoxAST::addWidgetsToControl(fileInput, browseButton);
     enableAST->value(1);
     enableAST->callback(checkBoxAST::controlCb, &checkBoxAST::wtc);
-    enableAST
-        ->tooltip("AST — промежуточное представление кода в виде дерева.\n"
-                  "Вкл.: быстрый анализ, но может пропустить макросы/шаблоны.\n"
-                  "Выкл.: медленнее, зато проверяет реальный код после "
-                  "препроцессора.");
+    enableAST->tooltip(
+        "AST — промежуточное представление кода в виде дерева.\n"
+        "Вкл.: быстрый анализ, но может пропустить макросы/шаблоны.\n"
+        "Выкл.: медленнее, зато проверяет реальный код после "
+        "препроцессора.");
+
+    auto *boxCommandLabel = new Fl_Box(29, 315, 146, 40, "Команда: ");
+
+    auto *commandDisplay = new Fl_Text_Display(193, 315, 560, 40);
+    auto *commandBuffer = new Fl_Text_Buffer();
+    commandDisplay->buffer(commandBuffer);
+
+    commandBuffer->append("text");
+
+    auto *addButton = new Fl_Button(643, 285, 110, 24, "Добавить");
 
     group1->end();
-    auto *group2 = new Fl_Group(25, 69, 714, 216);
+    auto *group2 = new Fl_Group(25, 69, 738, 303);
     group2->color(FL_YELLOW);
     group2->end();
-    auto *group3 = new Fl_Group(25, 69, 714, 216);
+    auto *group3 = new Fl_Group(25, 69, 738, 303);
     group3->color(FL_GREEN);
     group3->end();
 
@@ -124,10 +125,10 @@ void mainWindow::createWindow() {
   }
   tabs->end();
 
-  auto *groupTerminal = new Fl_Group(18, 302, 746, 258);
+  auto *groupTerminal = new Fl_Group(19, 315, 745, 348);
   {
 
-    auto *term = new linuxTerminal(24, 316, 740, 244);
+    auto *term = new linuxTerminal(19, 383, 741, 280);
     term->enterFirstPromt();
     term->createPTY();
 
