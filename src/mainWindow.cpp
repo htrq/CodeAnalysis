@@ -116,13 +116,6 @@ void mainWindow::createWindow() {
 
     auto *mainFileInput = new Fl_File_Input(227, 63, 422, 32, "main.cpp:");
     mainFileInput->tooltip("Укажите путь до main.cpp файла проекта");
-    mainFileInput->callback([](Fl_Widget* widget, void* data) -> void {
-      auto* input = static_cast<Fl_File_Input*>(data);
-      char* file = fl_file_chooser("Выберите main.cpp", "*.*", nullptr);
-      if (file != nullptr) {
-        input->value(file);
-      }
-    }, mainFileInput);
     
 
     auto *fileInput = new Fl_File_Input(227, 95, 422, 32);
@@ -131,16 +124,24 @@ void mainWindow::createWindow() {
         "Укажите compile_commands.json — инструкцию для clang-tidy,"
         "как собирать проект (include-пути, стандарт C++, define'ы)."
         "Без этого файла анализ будет неполным и неточным.");
-    fileInput->callback([](Fl_Widget* widget, void* data) -> void {
+
+    auto* browseMainButton = new Fl_Button(653, 67, 100, 28, "Обзор...");
+    browseMainButton->callback([](Fl_Widget* widget, void* data) -> void {
+      auto* input = static_cast<Fl_File_Input*>(data);
+      char* file = fl_file_chooser("Выберите main.cpp", "*.*", nullptr);
+      if (file != nullptr) {
+        input->value(file);
+      }
+    }, mainFileInput);
+
+    auto* browseAstButton = new Fl_Button(653, 99, 100, 28, "Обзор...");
+    browseAstButton->callback([](Fl_Widget* widget, void* data) -> void {
       auto* input = static_cast<Fl_File_Input*>(data);
       char* file = fl_dir_chooser("Выберите папку, содержащую compile_commands.json", nullptr);
       if (file != nullptr) {
         input->value(file);
       }
     }, fileInput);
-
-    auto* browseMainButton = new Fl_Button(653, 67, 100, 28, "Обзор...");
-    auto* browseAstButton = new Fl_Button(653, 99, 100, 28, "Обзор...");
 
     auto *enableAST = new checkBoxAST(43, 99, 116, 22, "enable AST");
     checkBoxAST::addWidgetsToControl(fileInput, browseAstButton);
