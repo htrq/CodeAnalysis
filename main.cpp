@@ -7,7 +7,8 @@
 
 int main() {
   std::println("Hello world");
-  mainWindow::createWindow();
+  auto* window = new mainWindow();
+  window->createWindow();
 
   return Fl::run();
 }

@@ -49,8 +49,12 @@ Function {make_window()} {open
           xywh {539 285 100 24}
         }
         Fl_Button {} {
-          label Button selected
+          label Button
           xywh {653 67 100 28}
+        }
+        Fl_Button {} {
+          label Button selected
+          xywh {435 285 100 24}
         }
       }
       Fl_Group {} {

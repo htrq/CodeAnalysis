@@ -63,6 +63,9 @@ void mainWindow::createWindow() {
   Fl_Tooltip::size(14);
 
   auto *window = new Fl_Double_Window(612, 230, 770, 677, "окно");
+
+  auto *term = new linuxTerminal(19, 383, 741, 280);
+
   auto *tabs = new Fl_Tabs(19, 27, 744, 345);
   {
     auto *group1 = new Fl_Group(25, 63, 738, 309);
@@ -175,6 +178,13 @@ void mainWindow::createWindow() {
     auto* clearButton = new Fl_Button(539, 285, 100, 24, "Очистить");
     clearButton->callback(clearButtonCb, commandBuffer);
     
+    auto* enterCommandButton = new Fl_Button(435, 285, 100, 24, "Ввести");
+    enterCommandCtx.buffer = commandBuffer;
+    enterCommandCtx.term = term;
+    enterCommandButton->callback([](Fl_Widget* widget, void* data) -> void {
+      auto* context = static_cast<enterCommandContext*>(data);
+      context->term->enterCommandToTerminal(context->buffer->text());
+    }, &enterCommandCtx);
 
     group1->end();
     auto *group2 = new Fl_Group(25, 69, 738, 303);
@@ -191,7 +201,7 @@ void mainWindow::createWindow() {
   auto *groupTerminal = new Fl_Group(19, 315, 745, 348);
   {
 
-    auto *term = new linuxTerminal(19, 383, 741, 280);
+    groupTerminal->add(term);
     term->enterFirstPromt();
     term->createPTY();
 

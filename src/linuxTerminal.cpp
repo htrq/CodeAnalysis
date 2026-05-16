@@ -12,9 +12,12 @@
 #include <sys/ioctl.h>
 #include <sys/types.h>
 #include <unistd.h>
-#include <regex>
 
-void linuxTerminal::enterFirstPromt() { write(master_fd, "Hellow world\n", 16); }
+void linuxTerminal::enterFirstPromt() const { write(master_fd, "echo \"Hellow world\"\n", 20); }
+
+void linuxTerminal::enterCommandToTerminal(const char * text) const {
+  write(master_fd, text, strlen(text));
+}
 
 int linuxTerminal::handle(int event) {
   if (event == FL_KEYDOWN) {

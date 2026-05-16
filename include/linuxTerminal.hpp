@@ -1,6 +1,10 @@
 #ifndef LINUX_TERMINAL_HPP_HTRQ
 #define LINUX_TERMINAL_HPP_HTRQ
 #include <FL/Fl_Terminal.H>
+#include <Fl/Fl_Text_Buffer.H>
+#include <string>
+
+
 
 class linuxTerminal : public Fl_Terminal {
   Fl_Terminal *flTerminal{};
@@ -20,11 +24,13 @@ public:
     scrollbar_size(12);
   }
   ~linuxTerminal();
-  void enterFirstPromt();
-  void makeTerminalKeyboardEventHandler();
+  void enterFirstPromt() const;
+  void enterCommandToTerminal(const char* text) const;
   int handle(int event) override;
   void createPTY();
   static void pty_cb(int fd, void *userdata);
 };
+
+
 
 #endif
