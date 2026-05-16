@@ -36,19 +36,21 @@ void addButtonCb(Fl_Widget *widget, void *data) {
   auto *item = context->tree->callback_item();
   if (item != nullptr) {
     std::string option = item->label();
+    std::string astPath = context->astPath->value();
+    std::string mainPath = context->mainFilePath->value();
     std::println("label for option is: {}", option);
     Fl_Text_Buffer *buffer = context->commandBuffer;
     commandBuilderCT::addOption(option, *buffer);
-    std::string astPath{context->astPath->value()};
-    char astValue{context->astButton->value()};
-    // commandBuilderCT::addASTPath(astPath, astValue);
+    commandBuilderCT::addASTPath(astPath, context->astCheck->value());
+    commandBuilderCT::addMainFilePath(mainPath);
     commandBuilderCT::printCommand(*buffer);
   }
 }
 
 void clearButtonCb(Fl_Widget* widget, void* data) {
-  auto* commandBuffer = static_cast<Fl_Text_Buffer*>(data);
-  commandBuffer->text("");
+  auto* buffer = static_cast<Fl_Text_Buffer*>(data);
+  buffer->text("");
+  commandBuilderCT::resetCommand();
 }
 } // namespace
 
@@ -164,11 +166,15 @@ void mainWindow::createWindow() {
     addButtonCtx->astButton = enableAST;
     addButtonCtx->commandBuffer = commandBuffer;
     addButtonCtx->astPath = fileInput;
+    addButtonCtx->mainFilePath = mainFileInput;
     addButtonCtx->tree = tree;
+    addButtonCtx->astCheck = enableAST;
     addButton->callback(addButtonCb, addButtonCtx);
+    
 
     auto* clearButton = new Fl_Button(539, 285, 100, 24, "Очистить");
     clearButton->callback(clearButtonCb, commandBuffer);
+    
 
     group1->end();
     auto *group2 = new Fl_Group(25, 69, 738, 303);

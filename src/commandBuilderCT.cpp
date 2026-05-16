@@ -4,7 +4,8 @@
 
 std::string commandBuilderCT::baseTemplate { "clang-tidy " };
 std::string commandBuilderCT::optionTemplate { "-checks='-* " };
-std::string commandBuilderCT::astOptionTemplate {};
+std::string commandBuilderCT::astOptionTemplate{};
+std::string commandBuilderCT::mainFilePathTemplate{};
 
 void commandBuilderCT::addOption(std::string& option, Fl_Text_Buffer& commandBuffer) {
     std::println("Recieved option: {}", option);
@@ -13,23 +14,32 @@ void commandBuilderCT::addOption(std::string& option, Fl_Text_Buffer& commandBuf
 }
 
 void commandBuilderCT::addASTPath(std::string& path, char checkBoxValue) {
-    if (checkBoxValue == 0) {
+    astOptionTemplate = "";
+    if (checkBoxValue == 0 || path.empty()) {
         return;
     }
-    astOptionTemplate.append(path);
-    baseTemplate.append(astOptionTemplate);
+    astOptionTemplate.append("-p " + path + " ");
+}
+
+void commandBuilderCT::addMainFilePath(std::string& path) {
+    if (path.empty()) {
+        return;
+    }
+    mainFilePathTemplate = "";
+    mainFilePathTemplate.append(path + " ");
 }
 
 void commandBuilderCT::printCommand(Fl_Text_Buffer& commandBuffer) {
     commandBuffer.text("");
     commandBuffer.append(baseTemplate.c_str());
-    commandBuffer.append(optionTemplate.c_str());
     commandBuffer.append(astOptionTemplate.c_str());
+    commandBuffer.append(mainFilePathTemplate.c_str());
+    commandBuffer.append(optionTemplate.c_str());
 }
 
-void commandBuilderCT::resetCommandLine(Fl_Text_Buffer& commandBuffer) {
+void commandBuilderCT::resetCommand() {
     baseTemplate = "clang-tidy ";
     optionTemplate = "-checks='-*";
-    astOptionTemplate = " -p ";
-    commandBuffer.replace(0, commandBuffer.length(), baseTemplate.c_str());
+    astOptionTemplate = "";
+    mainFilePathTemplate = "";
 }
