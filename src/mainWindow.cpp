@@ -260,6 +260,13 @@ void mainWindow::createWindow() {
       }, context);
 
       auto *enterButton = new Fl_Button(435, 285, 100, 24, "Ввести");
+      enterButton->tooltip("Ввести команду в терминал");
+
+      auto *enterCommandCppCheckContext = new enterCommandContext{.buffer=commandBufferCppCheck, .term=term};
+      enterButton->callback([](Fl_Widget* widget, void* data) -> void {
+        auto* context = static_cast<enterCommandContext*>(data);
+        context->term->enterCommandToTerminal(context->buffer->text());
+      }, enterCommandCppCheckContext);
     }
     group2->end();
     auto *group3 = new Fl_Group(25, 69, 738, 303);

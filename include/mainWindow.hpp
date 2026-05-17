@@ -12,6 +12,8 @@ struct enterCommandContext {
     linuxTerminal* term;
 };
 
+
+
 class mainWindow {
   static void changeTabCallback(Fl_Widget *widget, void *data);
   enterCommandContext enterCommandCtx;
