@@ -8,11 +8,11 @@ Function {make_window()} {open
     xywh {0 0 770 677} type Double visible
   } {
     Fl_Tabs {} {open
-      xywh {19 27 744 345}
+      xywh {19 27 744 353}
     } {
       Fl_Group {} {
         label group1 open
-        xywh {25 63 738 309}
+        xywh {25 63 738 309} hide
       } {
         Fl_Tree {} {
           xywh {35 135 718 148}
@@ -53,24 +53,43 @@ Function {make_window()} {open
           xywh {653 67 100 28}
         }
         Fl_Button {} {
-          label Button selected
+          label Button
           xywh {435 285 100 24}
         }
       }
       Fl_Group {} {
         label group2 open
-        xywh {25 69 733 232} hide
-      } {}
+        xywh {25 69 732 311}
+      } {
+        Fl_Input {} {
+          label {input:}
+          xywh {138 79 470 24}
+        }
+        Fl_Tree {} {selected
+          xywh {25 131 732 168}
+        }
+        Fl_Text_Display {} {
+          xywh {131 322 600 50}
+        }
+        Fl_Box {} {
+          label label
+          xywh {25 322 100 36}
+        }
+        Fl_Button {} {
+          label Button
+          xywh {627 79 103 24}
+        }
+      }
       Fl_Group {} {
         label group3 open
         xywh {19 69 738 232} hide
       } {}
     }
     Fl_Group {} {open
-      xywh {19 315 745 348}
+      xywh {19 383 740 280}
     } {
       Fl_Terminal {} {
-        xywh {19 383 741 280} align 5
+        xywh {19 383 740 280} align 5
       }
     }
   }
