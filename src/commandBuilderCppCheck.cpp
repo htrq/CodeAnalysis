@@ -41,7 +41,7 @@ void CommandBuilderCppCheck::addProject(std::string& option) {
     }
     else {
         projectOption.clear();
-        projectOption.append(option);
+        projectOption.append("--project " + option);
         setAddedProjectOption(true);
     }
 }

@@ -242,6 +242,7 @@ void mainWindow::createWindow() {
 
       treeCppCheck->callback(tipTreeCppCheck::treeCb, nullptr);
       auto *addButton = new Fl_Button(643, 285, 110, 24, "Добавить");
+      addButton->tooltip("Добавить параметры в строку команды");
       auto *commandBuilder = new CommandBuilderCppCheck();
       auto *context =
           new CommandBuilderCppCheckContext{.buffer = commandBufferCppCheck,
@@ -251,6 +252,12 @@ void mainWindow::createWindow() {
       addButton->callback(addButtonCbCppCheck, context);
 
       auto *clearButton = new Fl_Button(539, 285, 100, 24, "Очистить");
+      clearButton->tooltip("Очистить командную строку");
+      clearButton->callback([](Fl_Widget* widget, void* data) -> void {
+        auto* context = static_cast<CommandBuilderCppCheckContext*>(data);
+        context->buffer->text("");
+        context->commandBuilder->resetCommand();
+      }, context);
 
       auto *enterButton = new Fl_Button(435, 285, 100, 24, "Ввести");
     }
