@@ -4,6 +4,7 @@
 #include "../include/tipTree.hpp"
 #include "../include/widgetData.hpp"
 #include "checkBox.AST.hpp"
+#include "tipTreeCppCheck.hpp"
 #include <FL/Enumerations.H>
 #include <FL/Fl.H>
 #include <FL/Fl_Box.H>
@@ -64,7 +65,7 @@ void mainWindow::createWindow() {
 
   auto *window = new Fl_Double_Window(612, 230, 770, 677, "окно");
 
-  auto *term = new linuxTerminal(19, 383, 741, 280);
+  auto *term = new linuxTerminal(19, 383, 740, 280);
 
   auto *tabs = new Fl_Tabs(19, 27, 744, 345);
   {
@@ -187,8 +188,38 @@ void mainWindow::createWindow() {
     }, &enterCommandCtx);
 
     group1->end();
-    auto *group2 = new Fl_Group(25, 69, 738, 303);
-    group2->color(FL_YELLOW);
+    auto *group2 = new Fl_Group(25, 69, 732, 311);
+    group2->label("CppCheck");
+    auto* projectPath = new Fl_File_Input(138, 79, 470, 34);
+    projectPath->label("project");
+    projectPath->tooltip("Укажите путь до директории compile_commands.json");
+    auto* browseProjectPathButton = new Fl_Button(627, 79, 103, 34);
+    browseProjectPathButton->label("Обзор...");
+    browseProjectPathButton->callback([](Fl_Widget* widget, void* data) -> void {
+      auto* projectPath = static_cast<Fl_File_Input*>(data);
+      const char* path = fl_dir_chooser("Укажите папку, содержащую compile_commands.json", nullptr);
+      projectPath->value(path);
+    }, projectPath);
+    auto* commandLineCppCheck = new Fl_Text_Display(193, 315, 560, 40);
+    auto* commandBufferCppCheck = new Fl_Text_Buffer();
+    auto* commandLabel = new Fl_Box(29, 315, 146, 40, "Команда: ");
+    commandLineCppCheck->buffer(commandBufferCppCheck);
+
+    auto* treeCppCheck = new tipTreeCppCheck(25, 131, 732, 168);
+    treeCppCheck->initMap();
+    treeCppCheck->root_label("sections");
+
+    treeCppCheck->add("warning");
+    treeCppCheck->add("style");
+    treeCppCheck->add("performance");
+    treeCppCheck->add("portability");
+    treeCppCheck->add("information");
+    treeCppCheck->add("unusedFunction");
+    treeCppCheck->add("missingInclude");
+    treeCppCheck->add("all");
+
+    treeCppCheck->callback(tipTreeCppCheck::treeCb, nullptr);
+
     group2->end();
     auto *group3 = new Fl_Group(25, 69, 738, 303);
     group3->color(FL_GREEN);
@@ -198,7 +229,7 @@ void mainWindow::createWindow() {
   }
   tabs->end();
 
-  auto *groupTerminal = new Fl_Group(19, 315, 745, 348);
+  auto *groupTerminal = new Fl_Group(19, 383, 740, 280);
   {
 
     groupTerminal->add(term);
