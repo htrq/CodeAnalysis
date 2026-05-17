@@ -1,7 +1,9 @@
 #include "../include/mainWindow.hpp"
 #include "../include/commandBuilderCT.hpp"
+#include "../include/commandBuilderCppCheck.hpp"
 #include "../include/linuxTerminal.hpp"
 #include "../include/tipTree.hpp"
+#include "../include/tipTreeCppCheck.hpp"
 #include "../include/widgetData.hpp"
 #include "checkBox.AST.hpp"
 #include "tipTreeCppCheck.hpp"
@@ -48,10 +50,20 @@ void addButtonCb(Fl_Widget *widget, void *data) {
   }
 }
 
-void clearButtonCb(Fl_Widget* widget, void* data) {
-  auto* buffer = static_cast<Fl_Text_Buffer*>(data);
+void clearButtonCb(Fl_Widget *widget, void *data) {
+  auto *buffer = static_cast<Fl_Text_Buffer *>(data);
   buffer->text("");
   commandBuilderCT::resetCommand();
+}
+
+void addButtonCbCppCheck(Fl_Widget *widget, void *data) {
+  auto *context = static_cast<CommandBuilderCppCheckContext *>(data);
+  std::string enableOption = context->tipTreeCppCheck->callback_item()->label();
+  context->commandBuilder->addEnable(enableOption);
+  std::string projectOption = context->projectPath->value();
+  context->commandBuilder->addProject(projectOption);
+  context->commandBuilder->buildCommand();
+  context->commandBuilder->writeCommandToBuffer(context->buffer);
 }
 } // namespace
 
@@ -122,7 +134,6 @@ void mainWindow::createWindow() {
 
     auto *mainFileInput = new Fl_File_Input(227, 63, 422, 32, "main.cpp:");
     mainFileInput->tooltip("Укажите путь до main.cpp файла проекта");
-    
 
     auto *fileInput = new Fl_File_Input(227, 95, 422, 32);
     fileInput->label("AST file:");
@@ -131,23 +142,28 @@ void mainWindow::createWindow() {
         "как собирать проект (include-пути, стандарт C++, define'ы)."
         "Без этого файла анализ будет неполным и неточным.");
 
-    auto* browseMainButton = new Fl_Button(653, 67, 100, 28, "Обзор...");
-    browseMainButton->callback([](Fl_Widget* widget, void* data) -> void {
-      auto* input = static_cast<Fl_File_Input*>(data);
-      char* file = fl_file_chooser("Выберите main.cpp", "*.*", nullptr);
-      if (file != nullptr) {
-        input->value(file);
-      }
-    }, mainFileInput);
+    auto *browseMainButton = new Fl_Button(653, 67, 100, 28, "Обзор...");
+    browseMainButton->callback(
+        [](Fl_Widget *widget, void *data) -> void {
+          auto *input = static_cast<Fl_File_Input *>(data);
+          char *file = fl_file_chooser("Выберите main.cpp", "*.*", nullptr);
+          if (file != nullptr) {
+            input->value(file);
+          }
+        },
+        mainFileInput);
 
-    auto* browseAstButton = new Fl_Button(653, 99, 100, 28, "Обзор...");
-    browseAstButton->callback([](Fl_Widget* widget, void* data) -> void {
-      auto* input = static_cast<Fl_File_Input*>(data);
-      char* file = fl_dir_chooser("Выберите папку, содержащую compile_commands.json", nullptr);
-      if (file != nullptr) {
-        input->value(file);
-      }
-    }, fileInput);
+    auto *browseAstButton = new Fl_Button(653, 99, 100, 28, "Обзор...");
+    browseAstButton->callback(
+        [](Fl_Widget *widget, void *data) -> void {
+          auto *input = static_cast<Fl_File_Input *>(data);
+          char *file = fl_dir_chooser(
+              "Выберите папку, содержащую compile_commands.json", nullptr);
+          if (file != nullptr) {
+            input->value(file);
+          }
+        },
+        fileInput);
 
     auto *enableAST = new checkBoxAST(43, 99, 116, 22, "enable AST");
     checkBoxAST::addWidgetsToControl(fileInput, browseAstButton);
@@ -174,52 +190,70 @@ void mainWindow::createWindow() {
     addButtonCtx->tree = tree;
     addButtonCtx->astCheck = enableAST;
     addButton->callback(addButtonCb, addButtonCtx);
-    
 
-    auto* clearButton = new Fl_Button(539, 285, 100, 24, "Очистить");
+    auto *clearButton = new Fl_Button(539, 285, 100, 24, "Очистить");
     clearButton->callback(clearButtonCb, commandBuffer);
-    
-    auto* enterCommandButton = new Fl_Button(435, 285, 100, 24, "Ввести");
+
+    auto *enterCommandButton = new Fl_Button(435, 285, 100, 24, "Ввести");
     enterCommandCtx.buffer = commandBuffer;
     enterCommandCtx.term = term;
-    enterCommandButton->callback([](Fl_Widget* widget, void* data) -> void {
-      auto* context = static_cast<enterCommandContext*>(data);
-      context->term->enterCommandToTerminal(context->buffer->text());
-    }, &enterCommandCtx);
+    enterCommandButton->callback(
+        [](Fl_Widget *widget, void *data) -> void {
+          auto *context = static_cast<enterCommandContext *>(data);
+          context->term->enterCommandToTerminal(context->buffer->text());
+        },
+        &enterCommandCtx);
 
     group1->end();
     auto *group2 = new Fl_Group(25, 69, 732, 311);
-    group2->label("CppCheck");
-    auto* projectPath = new Fl_File_Input(138, 79, 470, 34);
-    projectPath->label("project");
-    projectPath->tooltip("Укажите путь до директории compile_commands.json");
-    auto* browseProjectPathButton = new Fl_Button(627, 79, 103, 34);
-    browseProjectPathButton->label("Обзор...");
-    browseProjectPathButton->callback([](Fl_Widget* widget, void* data) -> void {
-      auto* projectPath = static_cast<Fl_File_Input*>(data);
-      const char* path = fl_dir_chooser("Укажите папку, содержащую compile_commands.json", nullptr);
-      projectPath->value(path);
-    }, projectPath);
-    auto* commandLineCppCheck = new Fl_Text_Display(193, 315, 560, 40);
-    auto* commandBufferCppCheck = new Fl_Text_Buffer();
-    auto* commandLabel = new Fl_Box(29, 315, 146, 40, "Команда: ");
-    commandLineCppCheck->buffer(commandBufferCppCheck);
+    {
+      group2->label("CppCheck");
+      group2->labelfont(14);
+      auto *projectPath = new Fl_File_Input(138, 79, 470, 34);
+      projectPath->label("json file:");
+      projectPath->tooltip("Укажите путь до директории compile_commands.json");
+      auto *browseProjectPathButton = new Fl_Button(627, 79, 103, 34);
+      browseProjectPathButton->label("Обзор...");
+      browseProjectPathButton->callback(
+          [](Fl_Widget *widget, void *data) -> void {
+            auto *projectPath = static_cast<Fl_File_Input *>(data);
+            const char *path = fl_file_chooser(
+                "Укажите папку, содержащую compile_commands.json", nullptr, "*.*");
+            projectPath->value(path);
+          },
+          projectPath);
+      auto *commandLineCppCheck = new Fl_Text_Display(193, 315, 560, 40);
+      auto *commandBufferCppCheck = new Fl_Text_Buffer();
+      auto *commandLabel = new Fl_Box(29, 315, 146, 40, "Команда: ");
+      commandLineCppCheck->buffer(commandBufferCppCheck);
 
-    auto* treeCppCheck = new tipTreeCppCheck(25, 131, 732, 168);
-    treeCppCheck->initMap();
-    treeCppCheck->root_label("sections");
+      auto *treeCppCheck = new tipTreeCppCheck(35, 135, 718, 148);
+      treeCppCheck->initMap();
+      treeCppCheck->root_label("sections");
 
-    treeCppCheck->add("warning");
-    treeCppCheck->add("style");
-    treeCppCheck->add("performance");
-    treeCppCheck->add("portability");
-    treeCppCheck->add("information");
-    treeCppCheck->add("unusedFunction");
-    treeCppCheck->add("missingInclude");
-    treeCppCheck->add("all");
+      treeCppCheck->add("warning");
+      treeCppCheck->add("style");
+      treeCppCheck->add("performance");
+      treeCppCheck->add("portability");
+      treeCppCheck->add("information");
+      treeCppCheck->add("unusedFunction");
+      treeCppCheck->add("missingInclude");
+      treeCppCheck->add("all");
 
-    treeCppCheck->callback(tipTreeCppCheck::treeCb, nullptr);
+      treeCppCheck->callback(tipTreeCppCheck::treeCb, nullptr);
+      auto *addButton = new Fl_Button(643, 285, 110, 24, "Добавить");
+      auto *commandBuilder = new CommandBuilderCppCheck();
+      auto *context =
+          new CommandBuilderCppCheckContext{.buffer = commandBufferCppCheck,
+                                            .commandBuilder = commandBuilder,
+                                            .tipTreeCppCheck = treeCppCheck,
+                                            .projectPath = projectPath};
+      addButton->callback(addButtonCbCppCheck, context);
 
+      auto *clearButton = new Fl_Button(539, 285, 100, 24, "Очистить");
+
+      auto *enterButton = new Fl_Button(435, 285, 100, 24, "Ввести");
+    }
     group2->end();
     auto *group3 = new Fl_Group(25, 69, 738, 303);
     group3->color(FL_GREEN);

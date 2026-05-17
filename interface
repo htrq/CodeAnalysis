@@ -8,7 +8,7 @@ Function {make_window()} {open
     xywh {0 0 770 677} type Double visible
   } {
     Fl_Tabs {} {open
-      xywh {19 27 744 353}
+      xywh {19 27 748 353}
     } {
       Fl_Group {} {
         label group1 open
@@ -59,13 +59,13 @@ Function {make_window()} {open
       }
       Fl_Group {} {
         label group2 open
-        xywh {25 69 732 311}
+        xywh {25 69 742 311}
       } {
         Fl_Input {} {
           label {input:}
           xywh {138 79 470 24}
         }
-        Fl_Tree {} {selected
+        Fl_Tree {} {
           xywh {25 131 732 168}
         }
         Fl_Text_Display {} {
@@ -78,6 +78,18 @@ Function {make_window()} {open
         Fl_Button {} {
           label Button
           xywh {627 79 103 24}
+        }
+        Fl_Button {} {
+          label Button selected
+          xywh {631 299 120 22}
+        }
+        Fl_Button {} {
+          label Button
+          xywh {507 299 120 22}
+        }
+        Fl_Button {} {
+          label Button
+          xywh {383 299 120 22}
         }
       }
       Fl_Group {} {
