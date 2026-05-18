@@ -3,6 +3,7 @@
 #include "../include/commandBuilderCppCheck.hpp"
 #include "../include/linuxTerminal.hpp"
 #include "../include/tipTree.hpp"
+#include "../include/tipTreeASan.hpp"
 #include "../include/tipTreeCppCheck.hpp"
 #include "../include/widgetData.hpp"
 #include "checkBox.AST.hpp"
@@ -16,6 +17,7 @@
 #include <FL/Fl_File_Chooser.H>
 #include <FL/Fl_File_Input.H>
 #include <FL/Fl_Group.H>
+#include <FL/Fl_Input.H>
 #include <FL/Fl_Tabs.H>
 #include <FL/Fl_Terminal.H>
 #include <FL/Fl_Text_Buffer.H>
@@ -84,6 +86,18 @@ void mainWindow::createWindow() {
     auto *group1 = new Fl_Group(25, 63, 738, 309);
     group1->label("clang-tidy");
     group1->labelfont(14);
+    group1->tooltip("clang-tidy\n"
+                    "Статический анализатор кода от LLVM/Clang.\n"
+                    "Проверяет исходный код БЕЗ запуска программы.\n"
+                    "Помогает находить:\n"
+                    "* ошибки логики\n"
+                    "* потенциальные баги\n"
+                    "* проблемы современного C++\n"
+                    "* нарушения style guide\n"
+                    "* рекомендации по modern C++\n"
+                    "Использует compile_commands.json\n"
+                    "для понимания include и флагов компиляции.\n"
+                    "Подходит для улучшения качества кода");
 
     auto *tree = new tipTree(35, 135, 718, 148);
     tree->begin();
@@ -135,8 +149,7 @@ void mainWindow::createWindow() {
     auto *mainFileInput = new Fl_File_Input(227, 63, 422, 32, "main.cpp:");
     mainFileInput->tooltip("Укажите путь до main.cpp файла проекта");
 
-    auto *fileInput = new Fl_File_Input(227, 95, 422, 32);
-    fileInput->label("AST file:");
+    auto *fileInput = new Fl_File_Input(227, 95, 422, 32, "AST file:");
     fileInput->tooltip(
         "Укажите compile_commands.json — инструкцию для clang-tidy,"
         "как собирать проект (include-пути, стандарт C++, define'ы)."
@@ -209,6 +222,19 @@ void mainWindow::createWindow() {
     {
       group2->label("CppCheck");
       group2->labelfont(14);
+      group2->tooltip("cppcheck\n"
+                      "Независимый статический анализатор C/C++.\n"
+                      "Проверяет исходный код БЕЗ запуска программы.\n"
+                      "Помогает находить:\n"
+                      "* потенциальные ошибки\n"
+                      "* утечки памяти\n"
+                      "* suspicious code\n"
+                      "* неиспользуемый код\n"
+                      "* portability проблемы\n"
+                      "Часто проще в настройке,\n"
+                      "чем clang-tidy.\n"
+                      "Хорошо подходит как дополнительная проверка");
+
       auto *projectPath = new Fl_File_Input(138, 79, 470, 34);
       projectPath->label("json file:");
       projectPath->tooltip("Укажите путь до директории compile_commands.json");
@@ -218,7 +244,8 @@ void mainWindow::createWindow() {
           [](Fl_Widget *widget, void *data) -> void {
             auto *projectPath = static_cast<Fl_File_Input *>(data);
             const char *path = fl_file_chooser(
-                "Укажите папку, содержащую compile_commands.json", nullptr, "*.*");
+                "Укажите папку, содержащую compile_commands.json", nullptr,
+                "*.*");
             projectPath->value(path);
           },
           projectPath);
@@ -253,24 +280,83 @@ void mainWindow::createWindow() {
 
       auto *clearButton = new Fl_Button(539, 285, 100, 24, "Очистить");
       clearButton->tooltip("Очистить командную строку");
-      clearButton->callback([](Fl_Widget* widget, void* data) -> void {
-        auto* context = static_cast<CommandBuilderCppCheckContext*>(data);
-        context->buffer->text("");
-        context->commandBuilder->resetCommand();
-      }, context);
+      clearButton->callback(
+          [](Fl_Widget *widget, void *data) -> void {
+            auto *context = static_cast<CommandBuilderCppCheckContext *>(data);
+            context->buffer->text("");
+            context->commandBuilder->resetCommand();
+          },
+          context);
 
       auto *enterButton = new Fl_Button(435, 285, 100, 24, "Ввести");
       enterButton->tooltip("Ввести команду в терминал");
 
-      auto *enterCommandCppCheckContext = new enterCommandContext{.buffer=commandBufferCppCheck, .term=term};
-      enterButton->callback([](Fl_Widget* widget, void* data) -> void {
-        auto* context = static_cast<enterCommandContext*>(data);
-        context->term->enterCommandToTerminal(context->buffer->text());
-      }, enterCommandCppCheckContext);
+      auto *enterCommandCppCheckContext = new enterCommandContext{
+          .buffer = commandBufferCppCheck, .term = term};
+      enterButton->callback(
+          [](Fl_Widget *widget, void *data) -> void {
+            auto *context = static_cast<enterCommandContext*>(data);
+            context->term->enterCommandToTerminal(context->buffer->text());
+          },
+          enterCommandCppCheckContext);
     }
     group2->end();
     auto *group3 = new Fl_Group(25, 69, 738, 303);
-    group3->color(FL_GREEN);
+    {
+      group3->label("AddressSanitizer");
+      group3->labelfont(14);
+      group3->tooltip("addressSanitizer\n"
+                      "Runtime анализатор ошибок памяти.\n"
+                      "Работает во время запуска программы,\n"
+                      "а не анализа исходного кода.\n"
+                      "Помогает обнаружить:\n"
+                      "* выход за границы массива\n"
+                      "* use-after-free\n"
+                      "* double free\n"
+                      "* переполнение stack/heap\n"
+                      "* утечки памяти\n"
+                      "Требует сборки с:\n"
+                      "-fsanitize=address\n"
+                      "Рекомендуется использовать\n"
+                      "в Debug режиме");
+      auto *mainFileInput = new Fl_File_Input(227, 63, 422, 32, "main.cpp:");
+      mainFileInput->tooltip("Укажите путь до main.cpp файла проекта");
+      auto *fileOutputName =
+          new Fl_Input(227, 105, 422, 22, "Имя исполняемого файла:");
+      fileOutputName->tooltip("Укажите название для скомпилированного файла");
+
+      auto *browseMainButton = new Fl_Button(653, 67, 100, 28, "Обзор...");
+      browseMainButton->callback(
+          [](Fl_Widget *widget, void *data) -> void {
+            auto *input = static_cast<Fl_File_Input *>(data);
+            char *file = fl_file_chooser("Выберите main.cpp", "*.*", nullptr);
+            if (file != nullptr) {
+              input->value(file);
+            }
+          },
+          mainFileInput);
+      auto *treeCppCheck = new tipTreeASan(35, 135, 718, 148);
+      treeCppCheck->initMap();
+      treeCppCheck->root_label("sections");
+
+      treeCppCheck->add("address");
+      treeCppCheck->add("undefined");
+      treeCppCheck->add("leak");
+      treeCppCheck->add("thread");
+      treeCppCheck->add("memory");
+      treeCppCheck->add("hwaddress");
+      treeCppCheck->add("pointer-compare");
+      treeCppCheck->add("pointer-subtract");
+      treeCppCheck->add("bounds");
+      treeCppCheck->add("alignment");
+      treeCppCheck->add("null");
+      treeCppCheck->add("return");
+      treeCppCheck->add("vptr");
+      treeCppCheck->add("integer");
+      treeCppCheck->add("all");
+
+      treeCppCheck->callback(tipTreeCppCheck::treeCb, nullptr);
+    }
     group3->end();
 
     auto *pages = new widgetData::tabsPages(tabs, group1, group2, group3);
