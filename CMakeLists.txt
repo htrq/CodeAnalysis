@@ -19,7 +19,8 @@ ${CMAKE_CURRENT_SOURCE_DIR}/src/checkBoxAST.cpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/commandBuilderCT.cpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/tipTreeCppCheck.cpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/commandBuilderCppCheck.cpp
-${CMAKE_CURRENT_SOURCE_DIR}/src/tipTreeASan.cpp
+${CMAKE_CURRENT_SOURCE_DIR}/src/tipTreeASan.cpp 
+${CMAKE_CURRENT_SOURCE_DIR}/src/commandBuilderASan.cpp 
 )
 
 set(FLTK_DIR "${CMAKE_CURRENT_SOURCE_DIR}/third-party/fltk-1.4.5/")

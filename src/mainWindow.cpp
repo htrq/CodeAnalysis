@@ -1,4 +1,5 @@
 #include "../include/mainWindow.hpp"
+#include "../include/commandBuilderASan.hpp"
 #include "../include/commandBuilderCT.hpp"
 #include "../include/commandBuilderCppCheck.hpp"
 #include "../include/linuxTerminal.hpp"
@@ -7,6 +8,8 @@
 #include "../include/tipTreeCppCheck.hpp"
 #include "../include/widgetData.hpp"
 #include "checkBox.AST.hpp"
+#include "commandBuilderASan.hpp"
+#include "tipTreeASan.hpp"
 #include "tipTreeCppCheck.hpp"
 #include <FL/Enumerations.H>
 #include <FL/Fl.H>
@@ -67,6 +70,20 @@ void addButtonCbCppCheck(Fl_Widget *widget, void *data) {
   context->commandBuilder->buildCommand();
   context->commandBuilder->writeCommandToBuffer(context->buffer);
 }
+
+void addButtonCbASanCheck(Fl_Widget *widget, void *data) {
+  auto *context = static_cast<CommandBuilderASanContext *>(data);
+  std::string snanitizeOption =
+      context->tipTreeASanCheck->callback_item()->label();
+  context->commandBuilder->addFsanitize(snanitizeOption);
+  std::string mainPathOption = context->mainFilePath->value();
+  context->commandBuilder->addMainPath(mainPathOption);
+  std::string fileName = context->compiledNameInput->value();
+  context->commandBuilder->addOutputFileOption(fileName);
+  context->commandBuilder->buildCommand();
+  context->commandBuilder->writeCommandToBuffer(context->buffer);
+}
+
 } // namespace
 
 void mainWindow::createWindow() {
@@ -268,6 +285,7 @@ void mainWindow::createWindow() {
       treeCppCheck->add("all");
 
       treeCppCheck->callback(tipTreeCppCheck::treeCb, nullptr);
+
       auto *addButton = new Fl_Button(643, 285, 110, 24, "Добавить");
       addButton->tooltip("Добавить параметры в строку команды");
       auto *commandBuilder = new CommandBuilderCppCheck();
@@ -295,7 +313,7 @@ void mainWindow::createWindow() {
           .buffer = commandBufferCppCheck, .term = term};
       enterButton->callback(
           [](Fl_Widget *widget, void *data) -> void {
-            auto *context = static_cast<enterCommandContext*>(data);
+            auto *context = static_cast<enterCommandContext *>(data);
             context->term->enterCommandToTerminal(context->buffer->text());
           },
           enterCommandCppCheckContext);
@@ -335,27 +353,64 @@ void mainWindow::createWindow() {
             }
           },
           mainFileInput);
-      auto *treeCppCheck = new tipTreeASan(35, 135, 718, 148);
-      treeCppCheck->initMap();
-      treeCppCheck->root_label("sections");
+      auto *treeASanCheck = new tipTreeASan(35, 135, 718, 148);
+      treeASanCheck->initMap();
+      treeASanCheck->root_label("sections");
+      treeASanCheck->add("address");
+      treeASanCheck->add("undefined");
+      treeASanCheck->add("leak");
+      treeASanCheck->add("thread");
+      treeASanCheck->add("memory");
+      treeASanCheck->add("hwaddress");
+      treeASanCheck->add("pointer-compare");
+      treeASanCheck->add("pointer-subtract");
+      treeASanCheck->add("bounds");
+      treeASanCheck->add("alignment");
+      treeASanCheck->add("null");
+      treeASanCheck->add("return");
+      treeASanCheck->add("vptr");
+      treeASanCheck->add("integer");
+      treeASanCheck->add("all");
+      treeASanCheck->callback(tipTreeCppCheck::treeCb, nullptr);
 
-      treeCppCheck->add("address");
-      treeCppCheck->add("undefined");
-      treeCppCheck->add("leak");
-      treeCppCheck->add("thread");
-      treeCppCheck->add("memory");
-      treeCppCheck->add("hwaddress");
-      treeCppCheck->add("pointer-compare");
-      treeCppCheck->add("pointer-subtract");
-      treeCppCheck->add("bounds");
-      treeCppCheck->add("alignment");
-      treeCppCheck->add("null");
-      treeCppCheck->add("return");
-      treeCppCheck->add("vptr");
-      treeCppCheck->add("integer");
-      treeCppCheck->add("all");
+      auto *commandLine = new Fl_Text_Display(193, 315, 560, 40);
+      auto *commandBuffer = new Fl_Text_Buffer();
+      auto *commandLabel = new Fl_Box(29, 315, 146, 40, "Команда: ");
 
-      treeCppCheck->callback(tipTreeCppCheck::treeCb, nullptr);
+      commandLine->buffer(commandBuffer);
+
+      auto *addButton = new Fl_Button(643, 285, 110, 24, "Добавить");
+      addButton->tooltip("Добавить параметры в строку команды");
+      auto *commandBuilder = new CommandBuilderASan();
+      auto *context =
+          new CommandBuilderASanContext{.buffer = commandBuffer,
+                                        .commandBuilder = commandBuilder,
+                                        .tipTreeASanCheck = treeASanCheck,
+                                        .compiledNameInput = fileOutputName,
+                                        .mainFilePath = mainFileInput};
+      addButton->callback(addButtonCbASanCheck, context);
+
+      auto *clearButton = new Fl_Button(539, 285, 100, 24, "Очистить");
+      clearButton->tooltip("Очистить командную строку");
+      clearButton->callback(
+          [](Fl_Widget *widget, void *data) -> void {
+            auto *context = static_cast<CommandBuilderASanContext *>(data);
+            context->buffer->text("");
+            context->commandBuilder->resetCommand();
+          },
+          context);
+
+      auto *enterButton = new Fl_Button(435, 285, 100, 24, "Ввести");
+      enterButton->tooltip("Ввести команду в терминал");
+
+      auto *enterCommandCppCheckContext =
+          new enterCommandContext{.buffer = commandBuffer, .term = term};
+      enterButton->callback(
+          [](Fl_Widget *widget, void *data) -> void {
+            auto *context = static_cast<enterCommandContext *>(data);
+            context->term->enterCommandToTerminal(context->buffer->text());
+          },
+          enterCommandCppCheckContext);
     }
     group3->end();
 
