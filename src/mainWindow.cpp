@@ -94,7 +94,7 @@ void mainWindow::createWindow() {
   Fl_Tooltip::font(FL_HELVETICA);
   Fl_Tooltip::size(14);
 
-  auto *window = new Fl_Double_Window(612, 230, 770, 677, "окно");
+  auto *window = new Fl_Double_Window(612, 230, 770, 677, "Code Analysis");
 
   auto *term = new linuxTerminal(19, 383, 740, 280);
 
