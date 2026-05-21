@@ -103,18 +103,18 @@ void mainWindow::createWindow() {
     auto *group1 = new Fl_Group(25, 63, 738, 309);
     group1->label("clang-tidy");
     group1->labelfont(14);
-    group1->tooltip("clang-tidy\n"
-                    "Статический анализатор кода от LLVM/Clang.\n"
-                    "Проверяет исходный код БЕЗ запуска программы.\n"
-                    "Помогает находить:\n"
-                    "* ошибки логики\n"
-                    "* потенциальные баги\n"
-                    "* проблемы современного C++\n"
-                    "* нарушения style guide\n"
-                    "* рекомендации по modern C++\n"
-                    "Использует compile_commands.json\n"
-                    "для понимания include и флагов компиляции.\n"
-                    "Подходит для улучшения качества кода");
+    // group1->tooltip("clang-tidy\n"
+    //                 "Статический анализатор кода от LLVM/Clang.\n"
+    //                 "Проверяет исходный код БЕЗ запуска программы.\n"
+    //                 "Помогает находить:\n"
+    //                 "* ошибки логики\n"
+    //                 "* потенциальные баги\n"
+    //                 "* проблемы современного C++\n"
+    //                 "* нарушения style guide\n"
+    //                 "* рекомендации по modern C++\n"
+    //                 "Использует compile_commands.json\n"
+    //                 "для понимания include и флагов компиляции.\n"
+    //                 "Подходит для улучшения качества кода");
 
     auto *tree = new tipTree(35, 135, 718, 148);
     tree->begin();
@@ -239,18 +239,18 @@ void mainWindow::createWindow() {
     {
       group2->label("CppCheck");
       group2->labelfont(14);
-      group2->tooltip("cppcheck\n"
-                      "Независимый статический анализатор C/C++.\n"
-                      "Проверяет исходный код БЕЗ запуска программы.\n"
-                      "Помогает находить:\n"
-                      "* потенциальные ошибки\n"
-                      "* утечки памяти\n"
-                      "* suspicious code\n"
-                      "* неиспользуемый код\n"
-                      "* portability проблемы\n"
-                      "Часто проще в настройке,\n"
-                      "чем clang-tidy.\n"
-                      "Хорошо подходит как дополнительная проверка");
+      // group2->tooltip("cppcheck\n"
+      //                 "Независимый статический анализатор C/C++.\n"
+      //                 "Проверяет исходный код БЕЗ запуска программы.\n"
+      //                 "Помогает находить:\n"
+      //                 "* потенциальные ошибки\n"
+      //                 "* утечки памяти\n"
+      //                 "* suspicious code\n"
+      //                 "* неиспользуемый код\n"
+      //                 "* portability проблемы\n"
+      //                 "Часто проще в настройке,\n"
+      //                 "чем clang-tidy.\n"
+      //                 "Хорошо подходит как дополнительная проверка");
 
       auto *projectPath = new Fl_File_Input(138, 79, 470, 34);
       projectPath->label("json file:");
@@ -323,20 +323,20 @@ void mainWindow::createWindow() {
     {
       group3->label("AddressSanitizer");
       group3->labelfont(14);
-      group3->tooltip("addressSanitizer\n"
-                      "Runtime анализатор ошибок памяти.\n"
-                      "Работает во время запуска программы,\n"
-                      "а не анализа исходного кода.\n"
-                      "Помогает обнаружить:\n"
-                      "* выход за границы массива\n"
-                      "* use-after-free\n"
-                      "* double free\n"
-                      "* переполнение stack/heap\n"
-                      "* утечки памяти\n"
-                      "Требует сборки с:\n"
-                      "-fsanitize=address\n"
-                      "Рекомендуется использовать\n"
-                      "в Debug режиме");
+      // group3->tooltip("addressSanitizer\n"
+      //                 "Runtime анализатор ошибок памяти.\n"
+      //                 "Работает во время запуска программы,\n"
+      //                 "а не анализа исходного кода.\n"
+      //                 "Помогает обнаружить:\n"
+      //                 "* выход за границы массива\n"
+      //                 "* use-after-free\n"
+      //                 "* double free\n"
+      //                 "* переполнение stack/heap\n"
+      //                 "* утечки памяти\n"
+      //                 "Требует сборки с:\n"
+      //                 "-fsanitize=address\n"
+      //                 "Рекомендуется использовать\n"
+      //                 "в Debug режиме");
       auto *mainFileInput = new Fl_File_Input(227, 63, 422, 32, "main.cpp:");
       mainFileInput->tooltip("Укажите путь до main.cpp файла проекта");
       auto *fileOutputName =
