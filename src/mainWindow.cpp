@@ -434,7 +434,6 @@ void mainWindow::createWindow() {
 }
 
 void mainWindow::changeTabCallback(Fl_Widget *widget, void *data) {
-  auto *tabs = static_cast<Fl_Tabs *>(widget); // наверное убрать потом
   auto *pages = static_cast<widgetData::tabsPages *>(data);
 
   switch (pages->getIndex()) {
